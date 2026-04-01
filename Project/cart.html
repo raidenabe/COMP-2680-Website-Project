@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Shopping Cart</title>
+
+		<link href="reset.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+
+		<style>
+
+			.horizontalHeaderSection {
+				margin: 10px;
+				padding: 3%;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+			}
+
+			.horizontalHeaderSection::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			.horizontalHeaderSection h3 {
+				text-align: center;
+			}
+			
+			
+			
+		</style>
+		
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<h1> Pizza Time </h1>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Your Shopping Cart </h1>
+			
+			<!-- Header Section -->
+			<section class="horizontalHeaderSection">
+				<h3> Pizza </h3>
+				<h3> Size </h3>
+				<h3> Quantity </h3>
+				<h3> Price </h3>
+			</section>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+				</div>
+
+				<div>
+					<h3> Hours of Operation </h3>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Links </h3>
+					<a href="menu.html" alt="Menu Link"> Menu </a>
+					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
+					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Socials </h3>
+					<a href="menu.html" alt="Facebook Link"> Facebook </a>
+					<a href="index.html" alt="Instagram Link"> Instagram </a>
+					<a href="index.html" alt="TikTok Link"> TikTok </a>
+				</div>
+
+			</footer>
+
+		</div>
+
+	</body>
+</html>

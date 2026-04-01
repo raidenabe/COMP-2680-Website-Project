@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Contact Page</title>
+
+		<link href="reset.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+
+		<style>
+			
+			#contactInfoSection {
+				margin: 2% 0;
+				text-align: center;
+				line-height: 2;
+			}
+
+			#comparisonTable {
+				justify-self: center;
+				margin: 2% 0;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<h1> Pizza Time </h1>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Contact Us </h1>
+
+			<!-- Contact Form -->
+			<form class="form"> 
+				<label for="userName">Full Name: *</label>
+				<input name="name" id="userName" type="text" required/> 
+
+				<label for="userEmail">Email: *</label>
+				<input name="email" id="userEmail" type="email" required/> 
+
+				<label for="userMessage">Message: *</label>
+				<textarea name="message" id="userMessage" rows="4" cols="50" required> </textarea>
+					
+				<button name="submit" id="userSubmit" type="button" onclick="submitMessage()"> Submit </button> 
+
+			</form>
+
+			<!-- Submit Message -->
+			<p id="submitMessage">  </p>
+			
+			<section id="contactInfoSection">
+				<p> Text or call us at <a href="tel:250-PIZZA-TIME">250-PIZZA-TIME</a> <br> </p>
+
+				<p> Email us at <a href="mailto:pizzatime@gmail.com">pizzatime@gmail.com</a> <br> </p>
+
+				<img alt="QR Code">
+				
+				<p> We are located at: 111 Pizza Rd, Kamloops, British Columbia </p>
+
+				<img alt="Our Location">
+			</section>
+
+			<!-- Price Comparison Table -->
+			<table id="comparisonTable">
+				<tr> 
+					<th> Days of the Week </th>
+					<th> Starting Time </th>
+					<th> Closing Time </th>
+				</tr>
+
+				<tr> 
+					<td> Monday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Tuesday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Wednesday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Thursday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Friday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Saturday </td>
+					<td> 10:00am </td>
+					<td> 1:00am </td>
+				</tr>
+
+				<tr> 
+					<td> Sunday </td>
+					<td> 10:00am </td>
+					<td> 1:00am </td>
+				</tr>
+			</table>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+				</div>
+
+				<div>
+					<h3> Hours of Operation </h3>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Links </h3>
+					<a href="menu.html" alt="Menu Link"> Menu </a>
+					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
+					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Socials </h3>
+					<a href="menu.html" alt="Facebook Link"> Facebook </a>
+					<a href="index.html" alt="Instagram Link"> Instagram </a>
+					<a href="index.html" alt="TikTok Link"> TikTok </a>
+				</div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			function submitMessage() {
+				document.getElementById("submitMessage").innerHTML = "Successfully Submitted!";
+			}
+		</script>
+		
+	</body>
+</html>
