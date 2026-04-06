@@ -9,7 +9,7 @@
 		<style>
 
 			.menuItem {
-				margin: 0 auto;
+				margin: 6% auto 0 auto;
 				width: 50%;
 				text-align: center;
 			}
@@ -20,12 +20,23 @@
 			
 			.menuItem img {
 				outline: 1px solid black;
-				width: 40%;
+				width: 300px;
+				height: 500px;
+				object-fit: cover;
 				margin: 2%;
 			}
+
+			.menuItem button {
+				margin: 3%;
+			}
 			
+			#pricingHeader {
+				text-align: center;
+				margin-top: 3%;
+			}
+
 			#comparisonTable {
-				margin: 5% auto;
+				margin: 2% auto 5% auto;
 			}
 			
 		</style>
@@ -49,14 +60,71 @@
 			<!-- Pepperoni Pizza Section -->
 			<section class="menuItem">
 				<h2> Pepperoni Pizza</h2>
-				<img src="pizzahut.webp" alt="Pepperoni Pizza">
+				<img src="Images/pepperoni.jpg" alt="Pepperoni Pizza">
 				<h2> Ingredients: </h2>
 				<p> Pizza Sauce, Mozzarella Cheese, Pepperoni </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
+			</section>
+
+			<!-- Cheese Pizza Section -->
+			<section class="menuItem">
+				<h2> Cheese Pizza</h2>
+				<img src="Images/cheese.jpg" alt="Cheese Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Mozzarella Cheese, Topped with Arugula </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
+			</section>
+
+			<!-- Hawaiian Pizza Section -->
+			<section class="menuItem">
+				<h2> Hawaiian Pizza</h2>
+				<img src="Images/hawaiian.jpg" alt="Hawaiian Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Mozzarella Cheese, Ham, Pineapple, Topped with Cilantro </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
+			</section>
+
+			<!-- Vegetarian Pizza Section -->
+			<section class="menuItem">
+				<h2> Vegetarian Pizza</h2>
+				<img src="Images/vegetarian.avif" alt="Vegetarian Pizza">
+				<h2> Ingredients: </h2>
+				<p> White Sauce, Mozzarella Cheese, Feta Cheese, Spinach </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
+			</section>
+
+			<!-- BBQ Chicken Pizza Section -->
+			<section class="menuItem">
+				<h2> BBQ Chicken Pizza</h2>
+				<img src="Images/bbq.jpg" alt="BBQ Chicken Pizza">
+				<h2> Ingredients: </h2>
+				<p> BBQ Sauce, Mozzarella Cheese, Chicken </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
+			</section>
+
+			<!-- Margherita Pizza Section -->
+			<section class="menuItem">
+				<h2> Margherita Pizza</h2>
+				<img src="Images/margherita.jpg" alt="Margherita Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Neopolitan Mozzarella, Basil </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<button type="button"> Add to Order </button>
 			</section>
 			
 			<!-- Pizza Comparison Table -->
+			<h1 id="pricingHeader"> Pricing Table </h1>
 			<table id="comparisonTable">
 
 				<tr> 
@@ -127,9 +195,9 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="index.html" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="index.html" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
 
 			</footer>
