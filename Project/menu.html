@@ -19,8 +19,8 @@
 			.menuGrid img {
 				outline: 1px solid black;
 				margin: 3%;
-				width: 400px;
-				height: 400px;
+				width: 20vw;
+				height: 20vw;
 				object-fit: cover;
 			}
 			
@@ -48,7 +48,7 @@
 				<a href="details.html"> <img src="Images/pepperoni.jpg" alt="Menu Item Photo"> </a>
 				<a href="details.html"> <img src="Images/cheese.jpg" alt="Menu Item Photo"> </a>
 				<a href="details.html"> <img src="Images/hawaiian.jpg" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/vegetarian.avif" alt="Menu Item Photo"> </a>
+				<a href="details.html"> <img src="Images/vegetarian.jpg" alt="Menu Item Photo"> </a>
 				<a href="details.html"> <img src="Images/bbq.jpg" alt="Menu Item Photo"> </a>
 				<a href="details.html"> <img src="Images/margherita.jpg" alt="Menu Item Photo"> </a>
 			</section>
@@ -80,14 +80,25 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+		</script>
+		
 	</body>
 </html>

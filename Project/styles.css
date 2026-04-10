@@ -31,7 +31,7 @@ body {
 
 .title {
     text-align: center;
-    padding-top: 2%;
+    padding-top: 3vw;
 }
 
 /* Table Styles */
@@ -66,6 +66,7 @@ table, th, td {
 
 .footer {
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1.5fr 1fr 1fr;
     align-items: start;
     background-color: #a7c6ff;
@@ -110,4 +111,10 @@ table, th, td {
     text-decoration: none;
     display: block;
     margin: 5px 0;
+}
+
+#footerPageUpdated {
+    position: absolute;
+    right: 3vw;
+    bottom: 0.1vh;
 }

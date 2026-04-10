@@ -20,45 +20,63 @@
 
 			.aside {
 				float: right;
-				width: 23%;
-				padding: 10px;
+				width: 25%;
+				padding: 5px;
 				margin-left: 25px;
 				outline: 2px solid black;
 				background-color: rgba(167, 198, 255, .7);
+				line-height: 2;
+				text-align: center;
+			}
+
+			.aside::after {
+				content:"";
+				display: table;
+				clear: both;
+				margin-top: 5%;
+			}
+
+			.aside > ol {
+				list-style-position: inside;
+				display: block;
 			}
 
 			.aside h2 {
-				text-align: center;
 				padding: 10px;
 			}
 
-			.aside > h4 {
-				text-align: center;
-				margin: 15px;
+			.aside h4 {
+				display: inline;
 			}
 
-			.aside > p {
-				margin: 10px;
+			.aside p {
+				margin: 2% 2% 5% 2%;
 			}
 
 			.section {
-				padding: 3% 5%;
+				padding: 2% 5%;
 			}
 
 			.section p {
-				font-size: 24px;
+				font-size: 22px;
 				font-family: Georgia, 'Times New Roman', Times, serif;
 				line-height: 1.5;
 				text-align: center;
 				margin: 3% 4% 3% 4%;
 			}
 
+			.section::after {
+				clear:both;
+				display:table;
+				content:"";
+			}
+
 			#contentImage1 {
 				float: right;
 				margin-top: 3%;
 				margin-left: 50px;
-				width: 400px;
-				height: 225px;
+				width: 20vw;
+				height: auto;
 				object-fit: cover;
 				outline: 2px solid black;
 			}
@@ -66,7 +84,7 @@
 			#contentImage2 {
 				float: left;
 				margin-right: 50px;
-				width: 30%;
+				width: 25vw;
 				outline: 2px solid black;
 			}
 
@@ -95,26 +113,32 @@
 				<!-- Sidebar -->
 				<aside class="aside">
 						<h2> FAQ </h2>
-						<h4> Q1. Are your ingredients fresh?</h4>
-						<p> Yes, all of our ingredients are sourced fresh.</p>
-						<h4> Q2. Pseudo?</h4>
-						<p> yes, </p>
-						<h4> Q3. Pseudo?</h4>
-						<p> yes, </p>
-						<h4> Q4. Pseudo?</h4>
-						<p> yes, </p>
-						<h4> Q5. Pseudo?</h4>
-						<p> yes, </p>
-						<h4> Q6. Pseudo ?</h4>
-						<p> yes, </p>
-						<h4> Q7. Pseudo ?</h4>
-						<p> yes, </p>
-						<h4> Q8. Pseudo ?</h4>
-						<p> yes, </p>
-						<h4> Q9. Pseudo ?</h4>
-						<p> yes, </p>
-						<h4> Q10. Pseudo ?</h4>
-						<p> yes, </p>
+						<ol>
+							<li> <h4>Are your ingredients fresh?</h4> 
+								 <p>Yes, all of our ingredients are sourced fresh.</p>
+							</li>
+
+							<li> <h4>What days are you open?</h4> 
+								<p>We are open everyday! To find our hours of operation, 
+									visit the 'Contact Us' page.
+								</p>
+						   </li>
+
+						   <li> <h4>Are your ingredients fresh?</h4> 
+							<p>Yes, all of our ingredients are sourced fresh.</p>
+					   	   </li>
+
+							<li> <h4>Do you have vegetarian options?</h4> 
+								<p>Currently, we have one vegetarian option, but we plan on 
+									expanding our menu in the future.</p>
+						   </li>
+
+						   <li> <h4>How can we contact you?</h4> 
+							<p>For further details, visit our <a href="contact.html" alt="Contact Us Page Link">contact</a> page.</p>
+					   	   </li>
+
+
+						</ol>
 				</aside>
 
 				<!-- Section 1 -->
@@ -177,14 +201,25 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+		</script>
+		
 	</body>
 </html>

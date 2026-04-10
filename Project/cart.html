@@ -9,23 +9,52 @@
 		<style>
 
 			.horizontalHeaderSection {
-				margin: 10px;
-				padding: 3%;
+				padding: 5% 3% 0 3%;
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
-			}
-
-			.horizontalHeaderSection::after {
-				content: "";
-				display: table;
-				clear: both;
 			}
 			
 			.horizontalHeaderSection h3 {
 				text-align: center;
 			}
+
+			#pizzaContentSection {
+				padding: 3% 3% 0 3%;
+				margin: auto;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				row-gap: 10%;
+				text-align: center;
+			}
+
+			#pizzaContentSection img {
+				outline: 1px solid black;
+				margin: 0 auto;
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+			}
+
+			#pizzaContentSection h3 {
+				vertical-align: middle;
+			}
 			
-			
+			#noPizzaDisplay {
+				text-align: center;
+				margin: 2% auto;
+			}
+
+			#checkoutLink {
+				text-decoration: none;
+			}
+
+			#checkoutButton {
+				display: block;
+				margin: 10% auto 5% auto;
+				width: fit-content;
+				font-size: 18px;
+				font-weight: bold;
+			}
 			
 		</style>
 		
@@ -54,6 +83,16 @@
 				<h3> Price </h3>
 			</section>
 
+			<!-- Content Section -->
+			<section id="pizzaContentSection">
+			</section>
+
+			<!-- No Pizza In Cart Display -->
+			 <div id="noPizzaDisplay"></div>
+
+			<!-- Proceed to Checkout Button -->
+			<a href="checkout.html" id="checkoutLink"><button type="text" id="checkoutButton">Proceed to Checkout</button></a>
+
 			<!-- Footer -->
 			<footer class="footer">
 				
@@ -81,14 +120,61 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+			let pizzaTypesInCart = 0;
+
+			// Displays Pizzas That Are In The Cart
+			const pizzaSection = document.getElementById("pizzaContentSection");
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] != null)
+				{
+					pizzaTypesInCart++;
+
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+					let pizzaImg = "<img src='Images/" + pizzaObj.name + ".jpg'>";
+					let pizzaSize = "<h3>"+ pizzaObj.size +"</h3>";
+					let pizzaQuantity = "<h3>"+ pizzaObj.quantity +"</h3>";
+					let pizzaPrice = "<h3> $15 </h3>";
+					pizzaSection.innerHTML += pizzaImg + pizzaSize + pizzaQuantity + pizzaPrice;
+					
+				}
+			}
+
+			// When the Cart is Empty
+			if (pizzaTypesInCart === 0)
+			{
+				pizzaSection.style.display = "none";
+				document.getElementById("noPizzaDisplay").innerHTML = "<h3>Your shopping cart is empty.</h3>";
+			} 
+
+		</script>
 
 	</body>
 </html>
