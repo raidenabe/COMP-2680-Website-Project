@@ -8,6 +8,24 @@
 
 		<style>
 
+			#checkoutMessage {
+				text-align: center;
+				color: hsla(100, 85%, 40%, 0.9);
+			}
+
+			#orderDetails {
+				display: block;
+				width: 35vw;
+				margin: 2vh auto;
+				line-height: 2;
+				text-align: center;
+			}
+
+			#arrivalTime {
+				text-align: center;
+				margin: 2%;
+			}
+			
 		</style>
 	</head>
 
@@ -42,7 +60,7 @@
 				<label for="customerCreditCardCVV">CVV: *</label>
 				<input name="creditCardCVV" id="customerCreditCardCVV" type="text" pattern="/^\d{3}$/" required/> 
 
-				<button name="checkout" id="customerCheckout" type="button" onclick="orderCheckout()"> Checkout </button> 
+				<input name="checkout" id="customerCheckout" value="Checkout" type="submit" />
 
 			</form>
 
@@ -51,7 +69,10 @@
 			<!-- Title -->
 			<h1 class="title"> Order Details </h1>
 
-			<p id="arrivalTime"><b>Estimated Arrival Time: </b></p>
+			<!-- Order Details -->
+			 <main> <p id="orderDetails"></p> </main>
+
+			<p id="arrivalTime"></p>
 
 			<!-- Footer -->
 			<footer class="footer">
@@ -80,25 +101,60 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
 		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+			// Displays Order Information
+			let orderSummary = "";
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] != null)
+				{
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+					orderSummary += pizzaObj.quantity + "x " + pizzaObj.size + " " + pizzaObj.name + " pizza <br>";
+				}
+			}
+			document.getElementById("orderDetails").innerHTML = orderSummary;
+
+			// Checkout Logic
+			const checkoutButton = document.getElementById("customerCheckout");
+
+			checkoutButton.addEventListener('click', () => orderCheckout());
+
 			function orderCheckout() {
 				document.getElementById("checkoutMessage").innerHTML = "Success!"
 
+				let estimatedArrival = new Date();
+				estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
+
+				document.getElementById("arrivalTime").innerHTML = "<b>Estimated Arrival Time: </b>" + estimatedArrival;
 			}
 
-			let estimatedArrival = new Date();
-			estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
-
-			document.getElementById("arrivalTime").innerHTML += estimatedArrival;
+			
 		</script>
 	</body>
 </html>

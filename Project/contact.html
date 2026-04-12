@@ -18,6 +18,19 @@
 				justify-self: center;
 				margin: 2% 0;
 			}
+
+			#submitMessage {
+				text-align: center;
+			}
+
+			img {
+				width: 20vw;
+				height: 20vw;
+			}
+
+			#instaImg {
+				height: 13vw;
+			}
 			
 		</style>
 	</head>
@@ -60,11 +73,11 @@
 
 				<p> Email us at <a href="mailto:pizzatime@gmail.com">pizzatime@gmail.com</a> <br> </p>
 
-				<img alt="QR Code">
+				<img id="instaImg" src="Images/Instagram_qrCode.webp" alt="QR Code">
 				
 				<p> We are located at: 111 Pizza Rd, Kamloops, British Columbia </p>
 
-				<img alt="Our Location">
+				<img src="Images/PizzaTime.jpg" alt="Our Location">
 			</section>
 
 			<!-- Price Comparison Table -->
@@ -145,19 +158,28 @@
 				
 				<div class="footerLinks">
 					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
 				</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
 		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
 			function submitMessage() {
 				document.getElementById("submitMessage").innerHTML = "Successfully Submitted!";
 			}
+			
 		</script>
 		
 	</body>
