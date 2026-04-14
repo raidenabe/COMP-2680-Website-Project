@@ -55,3 +55,16 @@ Missing Requirements from Final Project Guidelines:
   -Implement responsive design using topics covered on class.
   -All images must be responsive (e.g., use max-width: 100% or similar techniques).
   -The web form must also be responsive across different screen sizes.
+
+
+  Updated (04/13/2026) - Raiden:
+
+  Validated webpages through W3C Validation Checker, and fixed most of the errors.
+  Added alt attributes to all <img> tags.
+  Added <meta charset="utf-8"> and <html lang="en-CA"> to all pages.
+  Added one semi-transparent image as index.html background.
+  Customized borders of images on index.html using border-radius and border-style.
+  Added box shadows to images on index.html.
+  Added text shadows on paragraph text on index.html.
+  Added a copyright symbol alongside some text in the footer of all pages (HTML entity).
+  Added an outline to the navigation bar and footer.
