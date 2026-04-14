@@ -68,3 +68,13 @@ Missing Requirements from Final Project Guidelines:
   Added text shadows on paragraph text on index.html.
   Added a copyright symbol alongside some text in the footer of all pages (HTML entity).
   Added an outline to the navigation bar and footer.
+
+  Updated (04/14/2026) #2 - Raiden:
+
+  Added another semi-transparent background image to menu.html as well as added a glass panel to display behind the menu items.
+  Fixed form logic for both the contact.html and checkout.html form.
+  Added order details to checkout.html to display the items in the order, the price of the items, the total before taxes, the total tax, and the net total of the order.
+  Made clicking on each of the menu items in menu.html actually bring you to that item in details.html.
+  Added form validation using :focus:valid and :focus:invalid pseudo classes to the checkout.html form.
+  Added regex patterns to the checkout form.
+  Formatted the prices and sizes in cart.html and checkout.html.
