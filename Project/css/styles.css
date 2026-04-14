@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* Structural Styles */
+
+body {
+    font-family: "Arial", "Helvetica";
+    background-image: url("../assets/pizza_background.jpg");
+}
+
+.bodyPage {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* Navigation Bar Styles */
+
+.horizontalNavigation {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    background-color: #72c0ff;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.horizontalNavigation img {
+    float: left;
+    width: 2vw;
+    height: auto;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.horizontalNavigation a {
+    color:black
+}
+
+/* Typographic Styles */
+
+.title {
+    text-align: center;
+    padding-top: 3vh;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    margin: 3vh 0;
+    padding-top: 2vh;
+    font-weight: bold;
+}
+
+/* Table Styles */
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+	text-align: center;
+}
+
+/* Form Styles */
+
+.form {
+    margin: 10px auto;
+}
+
+.form * {
+    text-align: center;
+    display: block;
+    margin: 6px auto;
+}
+
+.form > button {
+    margin-top: 1%;
+}
+
+/* Footer Styles */
+
+.footer {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1.25fr 1fr 1fr 1fr;
+    line-height: 1.5;
+    align-items: start;
+    text-align: center;
+    background-color: #72c0ff;
+}
+
+.footer div {
+    justify-self: center;
+    padding: 20px 0;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    display: block;
+    margin: 2%;
+}
+
+.footer p {
+    margin: 5px 5px;
+}
+
+.footerText {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    outline: 1px solid black;
+    align-self: center;
+    padding: 10%;
+}
+
+.footerLinks {
+    display: grid;
+    align-content: start;
+    gap: 5px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+#footerPageUpdated {
+    position: absolute;
+    right: 3vw;
+    bottom: 0.1vh;
+}
+
