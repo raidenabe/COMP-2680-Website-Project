@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+
 		<title>Shopping Cart</title>
 
 		<link href="css/reset.css" rel="stylesheet">
@@ -14,7 +16,7 @@
 				grid-template-columns: repeat(4, 1fr);
 			}
 			
-			.horizontalHeaderSection h3 {
+			.horizontalHeaderSection h2 {
 				text-align: center;
 			}
 
@@ -69,7 +71,7 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<a href="index.html"> <h1> Pizza Time </h1> </a>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
@@ -80,31 +82,32 @@
 			
 			<!-- Header Section -->
 			<section class="horizontalHeaderSection">
-				<h3> Pizza </h3>
-				<h3> Size </h3>
-				<h3> Quantity </h3>
-				<h3> Price </h3>
+				<h2> Pizza </h2>
+				<h2> Size </h2>
+				<h2> Quantity </h2>
+				<h2> Price </h2>
 			</section>
 
 			<!-- Content Section -->
-			<section id="pizzaContentSection">
-			</section>
+			<div id="pizzaContentSection"></div>
 
 			<!-- No Pizza In Cart Display -->
 			 <div id="noPizzaDisplay"></div>
 
 			<!-- Proceed to Checkout Button -->
-			<a href="checkout.html" id="checkoutLink"><button type="text" id="checkoutButton">Proceed to Checkout</button></a>
+			<a href="checkout.html" id="checkoutLink">
+				<button type="submit" id="checkoutButton">Proceed to Checkout</button>
+			</a>
 
 			<!-- Footer -->
 			<footer class="footer">
 				
 				<div class="footerText"> 
-					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+					<p> Pizza Time Pizza Time Pizza Time Pizza Time</p>
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -115,19 +118,21 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
-					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
-					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
 
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
 				<div id="footerPageUpdated"></div>
 
 			</footer>
@@ -183,7 +188,7 @@
 
 					let pizzaObj = JSON.parse(pizzas[i]);
 					console.log(pizzas[i]); //Testing purposes (remove later)
-					let pizzaImg = "<img src='assets/" + pizzaObj.name + ".jpg'>";
+					let pizzaImg = "<img src='assets/" + pizzaObj.name + ".jpg' alt='Pizza in the shopping cart'>";
 					let pizzaSize = "<h3>"+ pizzaObj.size +"</h3>";
 					let pizzaQuantity = "<h3>"+ pizzaObj.quantity +"</h3>";
 					let pizzaPrice = "<h3>$" + calculatePizzaPrice(pizzaObj) + ".00</h3>";

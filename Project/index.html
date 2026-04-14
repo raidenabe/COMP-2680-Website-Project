@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+		
 		<title>Pizza Time</title>
 
 		<link href="css/reset.css" rel="stylesheet">
@@ -10,6 +12,21 @@
 
 			.content {
 				width: 100%;
+				position: relative;
+				z-index: 3;
+			}
+
+			.content::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-image: url('assets/pizza_pattern.jpg');
+				background-size: cover;
+				opacity: 0.02;
+				z-index: -1;
 			}
 
 			.content::after {
@@ -45,7 +62,7 @@
 				padding: 10px;
 			}
 
-			.aside h4 {
+			.aside h3 {
 				display: inline;
 			}
 
@@ -64,6 +81,7 @@
 				font-family: Georgia, 'Times New Roman', Times, serif;
 				line-height: 1.5;
 				text-align: left;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 			}
 
 			.section::after {
@@ -93,6 +111,10 @@
 				object-fit: cover;
 				margin-left: 3%;
 				outline: 2px solid black;
+				border-radius: 2%;
+				border-style: outset;
+				box-shadow: 3px 3px 5px 4px hsla(0, 0%, 19%, 0.7);
+
 			}
 
 			#contentImage2 {
@@ -102,6 +124,9 @@
 				object-fit: cover;
 				margin-top: 13%;
 				outline: 2px solid black;
+				border-radius: 2%;
+				border-style: outset;
+				box-shadow: 3px 3px 5px 4px hsla(0, 0%, 19%, 0.7);
 			}
 
 			#contentVideo {
@@ -109,6 +134,9 @@
 				width: 30vw;
 				margin: -5% 5% 5% 5%;
 				outline: 2px solid black;
+				border-radius: 10%;
+				border-style: solid;
+				box-shadow: 3px 3px 5px 4px hsla(0, 0%, 19%, 0.7);
 			}
 
 		</style>
@@ -121,7 +149,7 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<a href="index.html"> <h1> Pizza Time </h1> </a>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
@@ -137,27 +165,27 @@
 				<aside class="aside">
 						<h2> FAQ </h2>
 						<ol>
-							<li> <h4>Are your ingredients fresh?</h4> 
+							<li> <h3>Are your ingredients fresh?</h3> 
 								 <p>Yes, all of our ingredients are sourced fresh.</p>
 							</li>
 
-							<li> <h4>What days are you open?</h4> 
+							<li> <h3>What days are you open?</h3> 
 								<p>We are open everyday! To find our hours of operation, 
 									visit the 'Contact Us' page.
 								</p>
 						   </li>
 
-						   <li> <h4>Do you do delivery or is it carryout only?</h4> 
+						   <li> <h3>Do you do delivery or is it carryout only?</h3> 
 								<p>We provide both carryout and delivery options.</p>
 					   	   </li>
 
-							<li> <h4>Do you have vegetarian options?</h4> 
+							<li> <h3>Do you have vegetarian options?</h3> 
 								<p>Currently, we have one vegetarian option, but we plan on 
 									expanding our menu in the future.</p>
 						   </li>
 
-						   <li> <h4>How can we contact you?</h4> 
-								<p>For further details, visit our <a href="contact.html" alt="Contact Us Page Link">contact</a> page.</p>
+						   <li> <h3>How can we contact you?</h3> 
+								<p>For further details, visit our <a href="contact.html">contact</a> page.</p>
 					   	   </li>
 
 
@@ -165,8 +193,8 @@
 				</aside>
 
 				<!-- Images Section -->
-				<section class="section">
-					<img id="contentImage1" src="assets/PizzaTime.jpg">
+				<div class="section">
+					<img id="contentImage1" src="assets/PizzaTime.jpg" alt="Front View of our Pizza Shop">
 					<p id="para1"> 
 						Pizza Time is here in Kamloops to supply all your pizza needs! 
 						Eat in or out at our brand new location in Kamloops. We offer
@@ -175,7 +203,7 @@
 
 					</p>
 
-					<img id="contentImage2" src="assets/bbq.jpg">
+					<img id="contentImage2" src="assets/bbq.jpg" alt="Top-Down Photo of our BBQ Chicken Pizza">
 					<p id="para2"> 
 						We have many different options to choose from! Our menu includes
 						classics such as Pepperoni, Cheese, and Hawaiian, as well as 
@@ -183,10 +211,10 @@
 						Vegetarian.
 
 					</p>
-				</section>
+				</div>
 
 				<!-- Video Section -->
-				<section class="section">
+				<div class="section">
 
 					<video id="contentVideo" controls> 
 						<source src="assets/pizza_video.mp4" type="video/mp4">
@@ -197,7 +225,7 @@
 						to create a rich, smoky flavour.
 					</p>
 					
-				</section>
+				</div>
 
 			</main>
 
@@ -209,7 +237,7 @@
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -220,20 +248,23 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
-					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
-					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
 
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+
 				<div id="footerPageUpdated"></div>
+
 
 			</footer>
 

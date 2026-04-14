@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+
 		<title>Pizza Details</title>
 
 		<link href="css/reset.css" rel="stylesheet">
@@ -55,7 +57,7 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<a href="index.html"> <h1> Pizza Time </h1> </a>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
@@ -66,120 +68,120 @@
 
 			<!-- Pepperoni Pizza Section -->
 			<section class="menuItem">
-				<h2> Pepperoni Pizza</h2>
+				<h2 id="pepperoni-pizza"> Pepperoni Pizza</h2>
 				<img src="assets/pepperoni.jpg" alt="Pepperoni Pizza">
 				<h2> Ingredients: </h2>
 				<p> Pizza Sauce, Mozzarella Cheese, Pepperoni </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="pepperoniSize" id="pepperoniSmall" type="radio" value="small"/>
-					<input name="pepperoniSize" id="pepperoniMedium" type="radio" value="medium" checked/>
-					<input name="pepperoniSize" id="pepperoniLarge" type="radio" value="large"/>
+					<input name="pepperoniSize" id="pepperoniSmall" type="radio" value="small">
+					<input name="pepperoniSize" id="pepperoniMedium" type="radio" value="medium" checked>
+					<input name="pepperoniSize" id="pepperoniLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="pepperoniQuantity" id="pepperoniQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="pepperoniQuantity" id="pepperoniQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="pepperoniButton"> Add to Order </button>
 			</section>
 
 			<!-- Cheese Pizza Section -->
 			<section class="menuItem">
-				<h2> Cheese Pizza</h2>
+				<h2 id="cheese-pizza"> Cheese Pizza</h2>
 				<img src="assets/cheese.jpg" alt="Cheese Pizza">
 				<h2> Ingredients: </h2>
 				<p> Pizza Sauce, Mozzarella Cheese, Topped with Arugula </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="cheeseSize" id="cheeseSmall" type="radio" value="small"/>
-					<input name="cheeseSize" id="cheeseMedium" type="radio" value="medium" checked/>
-					<input name="cheeseSize" id="cheeseLarge" type="radio" value="large"/>
+					<input name="cheeseSize" id="cheeseSmall" type="radio" value="small">
+					<input name="cheeseSize" id="cheeseMedium" type="radio" value="medium" checked>
+					<input name="cheeseSize" id="cheeseLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="cheeseQuantity" id="cheeseQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="cheeseQuantity" id="cheeseQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="cheeseButton"> Add to Order </button>
 			</section>
 
 			<!-- Hawaiian Pizza Section -->
 			<section class="menuItem">
-				<h2> Hawaiian Pizza</h2>
+				<h2 id="hawaiian-pizza"> Hawaiian Pizza</h2>
 				<img src="assets/hawaiian.jpg" alt="Hawaiian Pizza">
 				<h2> Ingredients: </h2>
 				<p> Pizza Sauce, Mozzarella Cheese, Ham, Pineapple, Topped with Cilantro </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="hawaiianSize" id="hawaiianSmall" type="radio" value="small"/>
-					<input name="hawaiianSize" id="hawaiianMedium" type="radio" value="medium" checked/>
-					<input name="hawaiianSize" id="hawaiianLarge" type="radio" value="large"/>
+					<input name="hawaiianSize" id="hawaiianSmall" type="radio" value="small">
+					<input name="hawaiianSize" id="hawaiianMedium" type="radio" value="medium" checked>
+					<input name="hawaiianSize" id="hawaiianLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="hawaiianQuantity" id="hawaiianQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="hawaiianQuantity" id="hawaiianQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="hawaiianButton"> Add to Order </button>
 			</section>
 
 			<!-- Vegetarian Pizza Section -->
 			<section class="menuItem">
-				<h2> Vegetarian Pizza</h2>
+				<h2 id="vegetarian-pizza"> Vegetarian Pizza</h2>
 				<img src="assets/vegetarian.jpg" alt="Vegetarian Pizza">
 				<h2> Ingredients: </h2>
 				<p> White Sauce, Mozzarella Cheese, Feta Cheese, Spinach </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="vegetarianSize" id="vegetarianSmall" type="radio" value="small"/>
-					<input name="vegetarianSize" id="vegetarianMedium" type="radio" value="medium" checked/>
-					<input name="vegetarianSize" id="vegetarianLarge" type="radio" value="large"/>
+					<input name="vegetarianSize" id="vegetarianSmall" type="radio" value="small">
+					<input name="vegetarianSize" id="vegetarianMedium" type="radio" value="medium" checked>
+					<input name="vegetarianSize" id="vegetarianLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="vegetarianQuantity" id="vegetarianQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="vegetarianQuantity" id="vegetarianQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="vegetarianButton"> Add to Order </button>
 			</section>
 
 			<!-- BBQ Chicken Pizza Section -->
 			<section class="menuItem">
-				<h2> BBQ Chicken Pizza</h2>
+				<h2 id="bbq-pizza"> BBQ Chicken Pizza</h2>
 				<img src="assets/bbq.jpg" alt="BBQ Chicken Pizza">
 				<h2> Ingredients: </h2>
 				<p> BBQ Sauce, Mozzarella Cheese, Chicken </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="bbqSize" id="bbqSmall" type="radio" value="small"/>
-					<input name="bbqSize" id="bbqMedium" type="radio" value="medium" checked/>
-					<input name="bbqSize" id="bbqLarge" type="radio" value="large"/>
+					<input name="bbqSize" id="bbqSmall" type="radio" value="small">
+					<input name="bbqSize" id="bbqMedium" type="radio" value="medium" checked>
+					<input name="bbqSize" id="bbqLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="bbqQuantity" id="bbqQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="bbqQuantity" id="bbqQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="bbqButton"> Add to Order </button>
 			</section>
 
 			<!-- Margherita Pizza Section -->
 			<section class="menuItem">
-				<h2> Margherita Pizza</h2>
+				<h2 id="margherita-pizza"> Margherita Pizza</h2>
 				<img src="assets/margherita.jpg" alt="Margherita Pizza">
 				<h2> Ingredients: </h2>
 				<p> Pizza Sauce, Neopolitan Mozzarella, Basil </p>
 				<h2> Sizes: </h2>
 				<p> Small | Medium | Large </p>
 				<div class="pizzaSizes">
-					<input name="margheritaSize" id="margheritaSmall" type="radio" value="small"/>
-					<input name="margheritaSize" id="margheritaMedium" type="radio" value="medium" checked/>
-					<input name="margheritaSize" id="margheritaLarge" type="radio" value="large"/>
+					<input name="margheritaSize" id="margheritaSmall" type="radio" value="small">
+					<input name="margheritaSize" id="margheritaMedium" type="radio" value="medium" checked>
+					<input name="margheritaSize" id="margheritaLarge" type="radio" value="large">
 				</div>
 				<h2> Quantity: </h2>
 				<div class="pizzaQuantity">
-					<input name="margheritaQuantity" id="margheritaQuantity" type="number" value="1" step="1" min="1" max="5"/>
+					<input name="margheritaQuantity" id="margheritaQuantity" type="number" value="1" step="1" min="1" max="5">
 				</div>
 				<button type="button" id="margheritaButton"> Add to Order </button>
 			</section>
@@ -233,11 +235,11 @@
 			<footer class="footer">
 				
 				<div class="footerText"> 
-					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+					<p> Pizza Time Pizza Time Pizza Time Pizza Time</p>
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -248,19 +250,21 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
-					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
-					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
 
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
 				<div id="footerPageUpdated"></div>
 
 			</footer>
