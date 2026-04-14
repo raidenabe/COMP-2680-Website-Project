@@ -9,13 +9,28 @@
 		<link href="css/styles.css" rel="stylesheet">
 
 		<style>
-			
+
+			.content::before {
+				background-image: url('assets/cutting_board_background.jpg');
+				background-size: cover;
+				opacity: 0.4;
+			}
+
 			.menuGrid {
+				width: 80%;
+				margin: 5% auto;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				row-gap: 30px;
 				place-items: center;
 				padding: 2% 10%;
+				/* From https://css.glass */
+				background: rgba(173, 173, 173, 0.22);
+				border-radius: 16px;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(8.2px);
+				-webkit-backdrop-filter: blur(8.2px);
+				border: 1px solid rgba(173, 173, 173, 0.31);
 			}
 			
 			.menuGrid img {
@@ -48,19 +63,20 @@
 				<a href="cart.html">Shopping Cart</a>
 			</nav>
 
-			<!-- Title -->
-			<h1 class="title"> Menu </h1>
+			<main class="content">
+				<!-- Title -->
+				<h1 class="title"> Menu </h1>
 
-			<!-- Menu Items Section -->
-			<div class="menuGrid">
-				<a href="details.html#pepperoni-pizza"> <img src="assets/pepperoni.jpg" alt="Pepperoni Pizza"> </a>
-				<a href="details.html#cheese-pizza"> <img src="assets/cheese.jpg" alt="Cheese Pizza"> </a>
-				<a href="details.html#hawaiian-pizza"> <img src="assets/hawaiian.jpg" alt="Hawaiian Pizza"> </a>
-				<a href="details.html#vegetarian-pizza"> <img src="assets/vegetarian.jpg" alt="Vegetarian Pizza"> </a>
-				<a href="details.html#bbq-pizza"> <img src="assets/bbq.jpg" alt="BBQ Chicken Pizza"> </a>
-				<a href="details.html#margherita-pizza"> <img src="assets/margherita.jpg" alt="Margherita Pizza"> </a>
-			</div>
-
+				<!-- Menu Items Section -->
+				<div class="menuGrid">
+					<a href="details.html#pepperoni-pizza"> <img src="assets/pepperoni.jpg" alt="Pepperoni Pizza"> </a>
+					<a href="details.html#cheese-pizza"> <img src="assets/cheese.jpg" alt="Cheese Pizza"> </a>
+					<a href="details.html#hawaiian-pizza"> <img src="assets/hawaiian.jpg" alt="Hawaiian Pizza"> </a>
+					<a href="details.html#vegetarian-pizza"> <img src="assets/vegetarian.jpg" alt="Vegetarian Pizza"> </a>
+					<a href="details.html#bbq-pizza"> <img src="assets/bbq.jpg" alt="BBQ Chicken Pizza"> </a>
+					<a href="details.html#margherita-pizza"> <img src="assets/margherita.jpg" alt="Margherita Pizza"> </a>
+				</div>
+			</main>
 			<!-- Footer -->
 			<footer class="footer">
 				

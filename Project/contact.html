@@ -57,7 +57,7 @@
 			<h1 class="title"> Contact Us </h1>
 
 			<!-- Contact Form -->
-			<form class="form"> 
+			<form class="form" id="contactForm" onsubmit="return false;"> 
 				<label for="userName">Full Name: *</label>
 				<input name="name" id="userName" type="text" required> 
 
@@ -65,7 +65,7 @@
 				<input name="email" id="userEmail" type="email" required> 
 
 				<label for="userMessage">Message: *</label>
-				<textarea name="message" id="userMessage" rows="4" cols="50" required> </textarea>
+				<textarea name="message" id="userMessage" rows="4" cols="50" minlength="10" required></textarea>
 					
 				<button name="submit" id="userSubmit" type="submit" onclick="submitMessage()"> Submit </button> 
 
@@ -184,8 +184,15 @@
 			let updatedDate = new Date(document.lastModified).toLocaleDateString();
 			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
 
+			//Displays success message if form input is valid
+			const submitButton = document.getElementById("userSubmit");
+			const contactForm = document.getElementById("contactForm");
+
+			submitButton.addEventListener('click', () => submitMessage())
+
 			function submitMessage() {
-				document.getElementById("submitMessage").innerHTML = "Successfully Submitted!";
+				if (contactForm.checkValidity())
+					document.getElementById("submitMessage").innerHTML = "Successfully Submitted!";
 			}
 			
 		</script>

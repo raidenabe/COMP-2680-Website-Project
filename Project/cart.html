@@ -156,6 +156,7 @@
 
 			let pizzaTypesInCart = 0;
 
+			//Calculates the price of the pizza given a pizza object
 			function calculatePizzaPrice(pizza) {
 				let pizzaPrice = 12.00;
 
@@ -188,10 +189,12 @@
 
 					let pizzaObj = JSON.parse(pizzas[i]);
 					console.log(pizzas[i]); //Testing purposes (remove later)
+
 					let pizzaImg = "<img src='assets/" + pizzaObj.name + ".jpg' alt='Pizza in the shopping cart'>";
-					let pizzaSize = "<h3>"+ pizzaObj.size +"</h3>";
+					let pizzaSize = "<h3>"+ pizzaObj.size.charAt(0).toUpperCase() + pizzaObj.size.slice(1) +"</h3>";
 					let pizzaQuantity = "<h3>"+ pizzaObj.quantity +"</h3>";
-					let pizzaPrice = "<h3>$" + calculatePizzaPrice(pizzaObj) + ".00</h3>";
+					let pizzaPrice = "<h3>$" + calculatePizzaPrice(pizzaObj).toFixed(2) + "</h3>";
+
 					pizzaSection.innerHTML += pizzaImg + pizzaSize + pizzaQuantity + pizzaPrice;
 					
 				}
