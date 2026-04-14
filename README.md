@@ -57,7 +57,7 @@ Missing Requirements from Final Project Guidelines:
   -The web form must also be responsive across different screen sizes.
 
 
-  Updated (04/13/2026) - Raiden:
+  Updated (04/14/2026) - Raiden:
 
   Validated webpages through W3C Validation Checker, and fixed most of the errors.
   Added alt attributes to all <img> tags.
