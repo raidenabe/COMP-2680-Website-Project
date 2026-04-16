@@ -85,3 +85,13 @@ Missing Requirements from Final Project Guidelines:
   Changed the footer placeholder text to say the address of the store on all the pages.
   Made it so that pizzas in the cart can now be removed.
   Made it so the net total is adding the tax (it was subtracting before I think that was a bug).
+
+  Updated (04/16/2026) - Raiden:
+
+  Added option to choose carryout or delivery on checkout page.
+  Added a delivery/carryout form with form validation when pressing the checkout button using .reportValidity().
+  Added box-shadows to form input.
+  Added more form validation using :focus:valid and :focus:invalid.
+  Added a gradient to the website name in the navigation bar.
+  Moved all internal styles to external stylesheets corresponding to each page (There was a line in the project guidelines document that said to only use external stylesheets, so I just moved everything).
+  Merged Kyle's update with my own changes.
