@@ -1,31 +1,65 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+
 		<title>Shopping Cart</title>
 
-		<link href="reset.css" rel="stylesheet">
-		<link href="styles.css" rel="stylesheet">
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
 
 		<style>
 
 			.horizontalHeaderSection {
-				margin: 10px;
-				padding: 3%;
+				padding: 5% 6% 0 3%;
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
 			}
-
-			.horizontalHeaderSection::after {
-				content: "";
-				display: table;
-				clear: both;
-			}
 			
-			.horizontalHeaderSection h3 {
+			.horizontalHeaderSection h2 {
 				text-align: center;
 			}
+
+			#pizzaContentSection {
+				padding: 3% 3% 0 3%;
+				margin: auto;
+				display: grid;
+				grid-template-columns: 5fr 5fr 5fr 5fr 1fr;
+				row-gap: 10%;
+				text-align: center;
+				align-items: center;
+			}
+
+			#pizzaContentSection img {
+				outline: 1px solid black;
+				margin: 0 auto;
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+			}
+
+			#pizzaContentSection h3 {
+				vertical-align: middle;
+				font-weight: lighter;
+			}
 			
-			
+			#noPizzaDisplay {
+				text-align: center;
+				margin: 2% auto;
+			}
+
+			#checkoutLink {
+				text-decoration: none;
+			}
+
+			#checkoutButton {
+				display: block;
+				padding: 10px;
+				margin: 10% auto 5% auto;
+				width: fit-content;
+				font-size: 18px;
+				font-weight: bold;
+			}
 			
 		</style>
 		
@@ -37,7 +71,7 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<h1> Pizza Time </h1>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
@@ -48,21 +82,32 @@
 			
 			<!-- Header Section -->
 			<section class="horizontalHeaderSection">
-				<h3> Pizza </h3>
-				<h3> Size </h3>
-				<h3> Quantity </h3>
-				<h3> Price </h3>
+				<h2> Pizza </h2>
+				<h2> Size </h2>
+				<h2> Quantity </h2>
+				<h2> Price </h2>
 			</section>
+
+			<!-- Content Section -->
+			<div id="pizzaContentSection"></div>
+
+			<!-- No Pizza In Cart Display -->
+			 <div id="noPizzaDisplay"></div>
+
+			<!-- Proceed to Checkout Button -->
+			<a href="checkout.html" id="checkoutLink">
+				<button type="submit" id="checkoutButton">Proceed to Checkout</button>
+			</a>
 
 			<!-- Footer -->
 			<footer class="footer">
 				
 				<div class="footerText"> 
-					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+					<p> 111 Pizza Rd, Kamloops, British Columbia</p>
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -73,22 +118,122 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+			let pizzaTypesInCart = 0;
+
+			//Calculates the price of the pizza given a pizza object
+			function calculatePizzaPrice(pizza) {
+				let pizzaPrice = 12.00;
+
+				switch (pizza.size)
+				{
+					case "medium":
+						pizzaPrice *= 1.25;
+						break;
+
+					case "large":
+						pizzaPrice *= 1.5;
+						break;
+				}
+
+				if (pizza.name === "vegetarian" || pizza.name === "bbq" || pizza.name === "margherita")
+				{
+					pizzaPrice += 2.00;
+				}
+
+				return pizzaPrice;
+			}
+
+			// Displays Pizzas That Are In The Cart
+			const pizzaSection = document.getElementById("pizzaContentSection");
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] != null)
+				{
+					pizzaTypesInCart++;
+
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+
+					let pizzaImg = "<img src='assets/" + pizzaObj.name + ".jpg' alt='Pizza in the shopping cart'>";
+					let pizzaSize = "<h3>"+ pizzaObj.size.charAt(0).toUpperCase() + pizzaObj.size.slice(1) +"</h3>";
+					let pizzaQuantity = "<h3>"+ pizzaObj.quantity +"</h3>";
+					let pizzaPrice = "<h3>$" + calculatePizzaPrice(pizzaObj).toFixed(2) + "</h3>";
+					
+
+					const removeButton = document.createElement('button');
+					removeButton.innerText = "Remove";
+					removeButton.id = i;
+
+
+					pizzaSection.innerHTML += pizzaImg + pizzaSize + pizzaQuantity + pizzaPrice;
+					pizzaSection.appendChild(removeButton);
+
+				}
+			}
+
+			document.querySelectorAll('button').forEach(button => {
+				button.addEventListener('click', () => removePizza(button));
+			});
+
+			// When the Cart is Empty
+			if (pizzaTypesInCart === 0)
+			{
+				pizzaSection.style.display = "none";
+				document.getElementById("noPizzaDisplay").innerHTML = "<h3>Your shopping cart is empty.</h3>";
+			} 
+
+			function removePizza(button) {
+
+				let arrayNum = button.id;
+				let pizza = JSON.parse(pizzas[arrayNum]);
+				let key = pizza.name + pizza.size;
+
+				delete localStorage[key];
+
+
+				alert("Pizza removed from cart " + button.id);
+
+				location.reload();
+			}
+
+
+		</script>
 
 	</body>
 </html>

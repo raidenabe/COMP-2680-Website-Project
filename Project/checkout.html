@@ -1,13 +1,90 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+
 		<title>Order Checkout</title>
 
-		<link href="reset.css" rel="stylesheet">
-		<link href="styles.css" rel="stylesheet">
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
 
 		<style>
 
+			#checkoutMessage {
+				text-align: center;
+				color: hsla(100, 85%, 40%, 0.9);
+				margin-bottom: 3%;
+			}
+
+			#orderDetails {
+				display:grid;
+				grid-template-columns: 3fr 1fr;
+				width: 20vw;
+				margin: 0 auto;
+				text-align: left;
+				line-height: 2;
+			}
+
+			#noItemsInCart {
+				display: none;
+				margin: 4vh auto;
+				text-align: center;
+			}
+
+			#customerName:focus {
+				background-color: hsla(0, 0%, 90%, 0.9);
+			}
+
+			#customerName:focus:valid {
+				background-color: hsla(100, 85%, 70%, 0.2);
+			}
+
+			#customerEmail:focus:valid {
+				background-color: hsla(100, 85%, 70%, 0.2);
+			}
+
+			#customerEmail:focus:invalid {
+				background-color: hsla(0, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardNum:focus:valid {
+				background-color: hsla(100, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardNum:focus:invalid {
+				background-color: hsla(0, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardExp:focus:valid {
+				background-color: hsla(100, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardExp:focus:invalid {
+				background-color: hsla(0, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardCVV:focus:valid {
+				background-color: hsla(100, 85%, 70%, 0.2);
+			}
+
+			#customerCreditCardCVV:focus:invalid {
+				background-color: hsla(0, 85%, 70%, 0.2);
+			}
+
+			#customerCheckout {
+				display: block;
+				padding: 10px;
+				margin: 2vh auto;
+				width: fit-content;
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			#arrivalTime {
+				text-align: center;
+				margin: 2%;
+			}
+			
 		</style>
 	</head>
 
@@ -17,7 +94,7 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<h1> Pizza Time </h1>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
@@ -26,42 +103,61 @@
 			<!-- Title -->
 			<h1 class="title"> Checkout </h1>
 
-			<form class="form"> 
+			<!-- Subtitle -->
+			<h2 class="subtitle"> Order Details </h2>
+
+			<!-- Order Details -->
+			<div id="orderDetails"> 
+
+				<!-- Order Items -->
+				<pre id="orderDetailsItems"></pre>
+
+				<!-- Order Cost-->
+				 <pre id="orderDetailsCost"></pre>
+
+			</div>
+
+			<!-- No Items In Cart Message -->
+			<h3 id="noItemsInCart">Your shopping cart is empty.</h3>
+
+			<!-- Subtitle -->
+			<h2 class="subtitle"> Enter Your Payment Information </h2>
+
+			<!-- Payment Information Form -->
+			<form class="form" id="checkoutForm" onsubmit="return false"> 
 				<label for="customerName">Full Name: *</label>
-				<input name="name" id="customerName" type="text" required/> 
+				<input name="name" id="customerName" type="text" required> 
 
 				<label for="customerEmail">Email: *</label>
-				<input name="email" id="customerEmail" type="email" required/> 
+				<input name="email" id="customerEmail" type="email" required> 
 
-				<label for="customerCreditCard#">Credit Card #: *</label>
-				<input name="creditcard#" id="customerCreditCard#" type="text" pattern="/^\d{4}-\d{4}-\d{4}-\d{4}$/" required/> 
+				<label for="customerCreditCardNum">Credit Card #: *</label>
+				<input name="creditcardnum" id="customerCreditCardNum" type="text" pattern="^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$" placeholder="XXXX XXXX XXXX XXXX" minlength="19" maxlength="19" required> 
 
 				<label for="customerCreditCardExp">Expiry Date: *</label>
-				<input name="creditCardExp" id="customerCreditCardExp" type="text" pattern="/^{0[0-9] | 1[0-2]}/\d{2}$/" required/> 
+				<input name="creditCardExp" id="customerCreditCardExp" type="text" pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$" maxlength="5" placeholder="MM/YY" required> 
 
 				<label for="customerCreditCardCVV">CVV: *</label>
-				<input name="creditCardCVV" id="customerCreditCardCVV" type="text" pattern="/^\d{3}$/" required/> 
+				<input name="creditCardCVV" id="customerCreditCardCVV" type="text" pattern="^[0-9]{3}$" maxlength="3" placeholder="XXX" required> 
 
-				<button name="checkout" id="customerCheckout" type="button" onclick="orderCheckout()"> Checkout </button> 
+				<input name="checkout" id="customerCheckout" value="Checkout" type="submit">
 
 			</form>
 
 			<p id="checkoutMessage"></p>
 
-			<!-- Title -->
-			<h1 class="title"> Order Details </h1>
+			<p id="arrivalTime"></p>
 
-			<p id="arrivalTime"><b>Estimated Arrival Time: </b></p>
 
 			<!-- Footer -->
 			<footer class="footer">
 				
 				<div class="footerText"> 
-					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+					<p> 111 Pizza Rd, Kamloops, British Columbia</p>
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -72,33 +168,149 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
 		<script>
-			function orderCheckout() {
-				document.getElementById("checkoutMessage").innerHTML = "Success!"
+			"use strict";
 
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+
+			//Calculates the price of the pizza given a pizza object
+			function calculatePizzaPrice(pizza) {
+				let pizzaPrice = 12.00;
+
+				switch (pizza.size)
+				{
+					case "medium":
+						pizzaPrice *= 1.25;
+						break;
+
+					case "large":
+						pizzaPrice *= 1.5;
+						break;
+				}
+
+				if (pizza.name === "vegetarian" || pizza.name === "bbq" || pizza.name === "margherita")
+				{
+					pizzaPrice += 2.00;
+				}
+
+				return pizzaPrice;
 			}
 
-			let estimatedArrival = new Date();
-			estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
 
-			document.getElementById("arrivalTime").innerHTML += estimatedArrival;
+			// Displays Order Information
+			let pizzaTypesInCart = 0;
+			let orderSummaryItems = "";
+			let orderSummaryCost = "";
+			let totalBeforeTaxes = 0;
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] !== null)
+				{
+					//Counts number of items in cart
+					pizzaTypesInCart++;
+
+					//Parses string into object
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+
+					//Converts first letters of pizza size and type into uppercase
+					let pizzaSizeString = pizzaObj.size.charAt(0).toUpperCase() + pizzaObj.size.slice(1);
+
+					let pizzaNameString = pizzaObj.name.charAt(0).toUpperCase() + pizzaObj.name.slice(1);
+					
+					let pizzaPrice = calculatePizzaPrice(pizzaObj);
+
+					totalBeforeTaxes += pizzaPrice;
+
+					orderSummaryItems += pizzaSizeString + " " + pizzaNameString + " Pizza x" + pizzaObj.quantity + "<br>";
+					orderSummaryCost += "$" + pizzaPrice.toFixed(2) + "<br>";
+				}
+			}
+
+			let orderTax = totalBeforeTaxes * 0.12;
+
+			//Displays totals of order
+			orderSummaryItems += "Total Before Taxes<br>";
+			orderSummaryCost += "$" + totalBeforeTaxes.toFixed(2) + "<br>";
+
+			orderSummaryItems += "GST and PST Tax<br>"
+			orderSummaryCost += "$" + orderTax.toFixed(2) + "<br>";
+
+
+			orderSummaryItems += "Net Total<br>";
+			orderSummaryCost += "$" + (totalBeforeTaxes + orderTax).toFixed(2) + "<br>";
+
+			const orderDetailsItems = document.getElementById("orderDetailsItems");
+			const orderDetailsCost = document.getElementById("orderDetailsCost");
+	
+			orderDetailsItems.innerHTML = orderSummaryItems;
+			orderDetailsCost.innerHTML = orderSummaryCost;
+
+			if (pizzaTypesInCart === 0)
+			{
+				const noItemsInCart = document.getElementById("noItemsInCart");
+ 
+				//Hides order details and shows the 'Your Cart is Empty' message
+				orderDetailsItems.style.display = "none";
+				orderDetailsCost.style.display = "none";
+				noItemsInCart.style.display = "block";
+			}
+
+
+			// Checkout Logic
+			let isCheckedOut = false;
+			const checkoutButton = document.getElementById("customerCheckout");
+			const checkoutForm = document.getElementById("checkoutForm");
+
+			checkoutButton.addEventListener('click', () => orderCheckout());
+
+			function orderCheckout() {
+				if (checkoutForm.checkValidity() && !isCheckedOut)
+				{
+					isCheckedOut = true;
+
+					document.getElementById("checkoutMessage").innerHTML = "Success!"
+
+					let estimatedArrival = new Date();
+					estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
+
+					document.getElementById("arrivalTime").innerHTML = "<b>Estimated Arrival Time: </b>" + estimatedArrival;
+				}
+			}
+
+			
 		</script>
 	</body>
 </html>

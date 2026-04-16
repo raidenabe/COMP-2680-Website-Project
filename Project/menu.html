@@ -1,27 +1,51 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-CA">
 	<head>
+		<meta charset="utf-8"> 
+
 		<title>Menu</title>
 
-		<link href="reset.css" rel="stylesheet">
-		<link href="styles.css" rel="stylesheet">
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
 
 		<style>
-			
+
+			.content::before {
+				background-image: url('assets/cutting_board_background.jpg');
+				background-size: cover;
+				background-attachment:fixed;
+				opacity: 0.4;
+			}
+
 			.menuGrid {
+				width: 80%;
+				margin: 5% auto;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				row-gap: 30px;
 				place-items: center;
 				padding: 2% 10%;
+				/* From https://css.glass */
+				background: rgba(173, 173, 173, 0.22);
+				border-radius: 16px;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(8.2px);
+				-webkit-backdrop-filter: blur(8.2px);
+				border: 1px solid rgba(173, 173, 173, 0.31);
 			}
 			
 			.menuGrid img {
 				outline: 1px solid black;
 				margin: 3%;
-				width: 400px;
-				height: 400px;
+				width: 20vw;
+				height: 20vw;
 				object-fit: cover;
+				transition: width 3s, height 3s;
+			}
+
+			.menuGrid img:hover {
+				width: 22vw;
+				height: 22vw;
 			}
 			
 		</style>
@@ -34,34 +58,35 @@
 
 			<!-- Navigation Bar -->
 			<nav class="horizontalNavigation"> 
-				<h1> Pizza Time </h1>
+				<a href="index.html"> <h2> Pizza Time </h2> </a>
 				<a href="index.html">Home</a>
 				<a href="menu.html">Menu</a>
 				<a href="cart.html">Shopping Cart</a>
 			</nav>
 
-			<!-- Title -->
-			<h1 class="title"> Menu </h1>
+			<main class="content">
+				<!-- Title -->
+				<h1 class="title"> Menu </h1>
 
-			<!-- Menu Items Section -->
-			<section class="menuGrid">
-				<a href="details.html"> <img src="Images/pepperoni.jpg" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/cheese.jpg" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/hawaiian.jpg" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/vegetarian.avif" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/bbq.jpg" alt="Menu Item Photo"> </a>
-				<a href="details.html"> <img src="Images/margherita.jpg" alt="Menu Item Photo"> </a>
-			</section>
-
+				<!-- Menu Items Section -->
+				<div class="menuGrid">
+					<a href="details.html#pepperoni-pizza"> <img src="assets/pepperoni.jpg" alt="Pepperoni Pizza"> </a>
+					<a href="details.html#cheese-pizza"> <img src="assets/cheese.jpg" alt="Cheese Pizza"> </a>
+					<a href="details.html#hawaiian-pizza"> <img src="assets/hawaiian.jpg" alt="Hawaiian Pizza"> </a>
+					<a href="details.html#vegetarian-pizza"> <img src="assets/vegetarian.jpg" alt="Vegetarian Pizza"> </a>
+					<a href="details.html#bbq-pizza"> <img src="assets/bbq.jpg" alt="BBQ Chicken Pizza"> </a>
+					<a href="details.html#margherita-pizza"> <img src="assets/margherita.jpg" alt="Margherita Pizza"> </a>
+				</div>
+			</main>
 			<!-- Footer -->
 			<footer class="footer">
 				
 				<div class="footerText"> 
-					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+					<p> 111 Pizza Rd, Kamloops, British Columbia</p>
 				</div>
 
 				<div>
-					<h3> Hours of Operation </h3>
+					<h2> Hours of Operation </h2>
 					<p> Sunday: 10:00am - 1:00am </p>	
 					<p> Monday: 9:00am - 10:00pm </p>	
 					<p> Tuesday: 9:00am - 10:00pm </p>	
@@ -72,22 +97,35 @@
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Links </h3>
-					<a href="menu.html" alt="Menu Link"> Menu </a>
-					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
-					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
 				</div>
 				
 				<div class="footerLinks">
-					<h3> Socials </h3>
-					<a href="menu.html" alt="Facebook Link"> Facebook </a>
-					<a href="index.html" alt="Instagram Link"> Instagram </a>
-					<a href="index.html" alt="TikTok Link"> TikTok </a>
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
 				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+
+				<div id="footerPageUpdated"></div>
 
 			</footer>
 
 		</div>
 
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+		</script>
+		
 	</body>
 </html>
