@@ -1,0 +1,176 @@
+<!DOCTYPE html> 
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8"> 
+
+		<title>Contact Page</title>
+
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/contact.css" rel="stylesheet">
+
+		<style>
+			
+			
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<a href="index.html">Pizza Time</a>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Contact Us </h1>
+
+			<!-- Contact Form -->
+			<form class="form" id="contactForm" onsubmit="return false;"> 
+				<label for="userName">Full Name: *</label>
+				<input name="name" id="userName" type="text" required> 
+
+				<label for="userEmail">Email: *</label>
+				<input name="email" id="userEmail" type="email" required> 
+
+				<label for="userMessage">Message: *</label>
+				<textarea name="message" id="userMessage" rows="4" cols="50" minlength="10" required></textarea>
+					
+				<button name="submit" id="userSubmit" type="submit" onclick="submitMessage()"> Submit </button> 
+
+			</form>
+
+			<!-- Submit Message -->
+			<p id="submitMessage">  </p>
+			
+			<div id="contactInfoSection">
+				<p> Text or call us at <a href="tel:250-PIZZA-TIME">250-PIZZA-TIME</a> <br> </p>
+
+				<p> Email us at <a href="mailto:pizzatime@gmail.com">pizzatime@gmail.com</a> <br> </p>
+
+				<img id="instaImg" src="assets/Instagram_qrCode.webp" alt="Instagram QR Code">
+				
+				<p> We are located at: 111 Pizza Rd, Kamloops, British Columbia </p>
+
+				<img src="assets/PizzaTime.jpg" alt="Front View of our Pizza Shop">
+			</div>
+
+			<!-- Price Comparison Table -->
+			<table id="comparisonTable">
+				<tr> 
+					<th> Days of the Week </th>
+					<th> Starting Time </th>
+					<th> Closing Time </th>
+				</tr>
+
+				<tr> 
+					<td> Monday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Tuesday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Wednesday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Thursday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Friday </td>
+					<td> 9:00am </td>
+					<td> 10:00pm </td>
+				</tr>
+
+				<tr> 
+					<td> Saturday </td>
+					<td> 10:00am </td>
+					<td> 1:00am </td>
+				</tr>
+
+				<tr> 
+					<td> Sunday </td>
+					<td> 10:00am </td>
+					<td> 1:00am </td>
+				</tr>
+			</table>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p>111 Pizza Rd, Kamloops, British Columbia</p>
+				</div>
+
+				<div>
+					<h2> Hours of Operation </h2>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
+				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
+				<div id="footerPageUpdated"></div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			//Displays success message if form input is valid
+			const submitButton = document.getElementById("userSubmit");
+			const contactForm = document.getElementById("contactForm");
+
+			submitButton.addEventListener('click', () => submitMessage())
+
+			function submitMessage() {
+				if (contactForm.checkValidity())
+					document.getElementById("submitMessage").innerHTML = "Successfully Submitted!";
+			}
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8"> 
+		
+		<title>Pizza Time</title>
+
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<a href="index.html">Pizza Time</a>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Content -->
+			<main class="content"> 
+
+				<!-- Title -->
+				<h1 class="title">Pizza Time</h1>
+				
+				<!-- Sidebar -->
+				<aside class="aside">
+						<h2> FAQ </h2>
+						<ol>
+							<li> <h3>Are your ingredients fresh?</h3> 
+								 <p>Yes, all of our ingredients are sourced fresh.</p>
+							</li>
+
+							<li> <h3>What days are you open?</h3> 
+								<p>We are open everyday! To find our hours of operation, 
+									visit the 'Contact Us' page.
+								</p>
+						   </li>
+
+						   <li> <h3>Do you do delivery or is it carryout only?</h3> 
+								<p>We provide both carryout and delivery options.</p>
+					   	   </li>
+
+							<li> <h3>Do you have vegetarian options?</h3> 
+								<p>Currently, we have one vegetarian option, but we plan on 
+									expanding our menu in the future.</p>
+						   </li>
+
+						   <li> <h3>How can we contact you?</h3> 
+								<p>For further details, visit our <a href="contact.html">contact</a> page.</p>
+					   	   </li>
+
+
+						</ol>
+				</aside>
+
+				<!-- Images Section -->
+				<div class="section">
+					<img id="contentImage1" src="assets/PizzaTime.jpg" alt="Front View of our Pizza Shop">
+					<p id="para1"> 
+						Pizza Time is here in Kamloops to supply all your pizza needs! 
+						Eat in or out at our brand new location in Kamloops. We offer
+						a variety of different pizzas including vegetarian options.
+						For any questions you can contact us or look at our handy FAQ!
+
+					</p>
+
+					<img id="contentImage2" src="assets/bbq.jpg" alt="Top-Down Photo of our BBQ Chicken Pizza">
+					<p id="para2"> 
+						We have many different options to choose from! Our menu includes
+						classics such as Pepperoni, Cheese, and Hawaiian, as well as 
+						our signature offerings including BBQ Chicken, Margherita, and 
+						Vegetarian.
+
+					</p>
+				</div>
+
+				<!-- Video Section -->
+				<div class="section">
+
+					<video id="contentVideo" controls> 
+						<source src="assets/pizza_video.mp4" type="video/mp4">
+					</video>
+					<p id="para3"> 
+						All of our pizza is prepared by hand with the highest quality ingredients.
+						It is then cooked in our traditional wood-fired pizza oven alongside oak wood
+						to create a rich, smoky flavour.
+					</p>
+					
+				</div>
+
+			</main>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p>111 Pizza Rd, Kamloops, British Columbia</p>
+				</div>
+
+				<div>
+					<h2> Hours of Operation </h2>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
+				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+
+				<div id="footerPageUpdated"></div>
+
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+		</script>
+		
+	</body>
+</html>

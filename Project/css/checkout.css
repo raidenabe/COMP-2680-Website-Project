@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/* Checkout Page Styles */
+
+#deliveryContainer {
+    height: 3vh;
+    text-align: center;
+}
+
+.deliveryOption {
+    display: inline-block;
+    margin: 0 2vw;
+}
+
+.deliveryOption label {
+    display: block;
+    margin-bottom: 1vh;
+}
+
+input[type="radio"] {
+    margin: 0 2%;
+    width: 5vw;
+    height: auto;
+}
+
+#checkoutMessage {
+    text-align: center;
+    color: hsla(100, 85%, 40%, 0.9);
+    margin-bottom: 3%;
+}
+
+#orderDetails {
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    width: 20vw;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 2;
+}
+
+#noItemsInCart {
+    display: none;
+    margin: 4vh auto;
+    text-align: center;
+}
+
+#customerName:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#customerName:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#customerEmail:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#customerEmail:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#customerPhoneNumber:focus:valid {
+    background-color: hsla(0, 0%, 73%, 0.2);
+}
+
+#deliveryAddress,
+#deliveryAddressLabel {
+    display: none;
+}
+
+#deliveryAddress:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#deliveryAddress:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#creditCardNum:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#creditCardNum:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#creditCardExp:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#creditCardExp:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#creditCardCVV:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#creditCardCVV:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#customerCheckout {
+    display: block;
+    padding: 10px;
+    margin: 2vh auto;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#arrivalTime {
+    text-align: center;
+    margin: 2%;
+}
+

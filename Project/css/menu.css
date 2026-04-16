@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* Menu Page Styles */
+
+.content::before {
+    background-image: url('../assets/cutting_board_background.jpg');
+    opacity: 0.4;
+}
+
+.menuGrid {
+    width: 80%;
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    place-items: center;
+    padding: 2% 10%;
+    background: rgba(173, 173, 173, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 1px solid rgba(173, 173, 173, 0.31);
+}
+
+.menuGrid img {
+    outline: 1px solid black;
+    margin: 3%;
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    transition: width 3s, height 3s;
+}
+
+.menuGrid img:hover {
+    width: 22vw;
+    height: 22vw;
+}
+

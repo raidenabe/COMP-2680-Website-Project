@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* Contact Page Styles */
+
+#contactForm {
+    margin-top: 2vh;
+}
+
+#contactInfoSection {
+    margin: 2% 0;
+    text-align: center;
+    line-height: 2;
+}
+
+#contactInfoSection p {
+    margin-top: 3vh;
+}
+
+#comparisonTable {
+    justify-self: center;
+    margin: 2% 0;
+}
+
+#submitMessage {
+    text-align: center;
+}
+
+img {
+    width: 20vw;
+    height: 20vw;
+}
+
+#instaImg {
+    height: 13vw;
+}
+

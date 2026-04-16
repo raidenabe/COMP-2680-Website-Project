@@ -1,0 +1,304 @@
+<!DOCTYPE html> 
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8"> 
+
+		<title>Pizza Details</title>
+
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/details.css" rel="stylesheet">
+		
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<a href="index.html">Pizza Time</a>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Pizza Details </h1>
+
+			<!-- Pepperoni Pizza Section -->
+			<section class="menuItem">
+				<h2 id="pepperoni-pizza"> Pepperoni Pizza</h2>
+				<img src="assets/pepperoni.jpg" alt="Pepperoni Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Mozzarella Cheese, Pepperoni </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="pepperoniSize" id="pepperoniSmall" type="radio" value="small">
+					<input name="pepperoniSize" id="pepperoniMedium" type="radio" value="medium" checked>
+					<input name="pepperoniSize" id="pepperoniLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="pepperoniQuantity" id="pepperoniQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="pepperoniButton"> Add to Order </button>
+			</section>
+
+			<!-- Cheese Pizza Section -->
+			<section class="menuItem">
+				<h2 id="cheese-pizza"> Cheese Pizza</h2>
+				<img src="assets/cheese.jpg" alt="Cheese Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Mozzarella Cheese, Topped with Arugula </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="cheeseSize" id="cheeseSmall" type="radio" value="small">
+					<input name="cheeseSize" id="cheeseMedium" type="radio" value="medium" checked>
+					<input name="cheeseSize" id="cheeseLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="cheeseQuantity" id="cheeseQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="cheeseButton"> Add to Order </button>
+			</section>
+
+			<!-- Hawaiian Pizza Section -->
+			<section class="menuItem">
+				<h2 id="hawaiian-pizza"> Hawaiian Pizza</h2>
+				<img src="assets/hawaiian.jpg" alt="Hawaiian Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Mozzarella Cheese, Ham, Pineapple, Topped with Cilantro </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="hawaiianSize" id="hawaiianSmall" type="radio" value="small">
+					<input name="hawaiianSize" id="hawaiianMedium" type="radio" value="medium" checked>
+					<input name="hawaiianSize" id="hawaiianLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="hawaiianQuantity" id="hawaiianQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="hawaiianButton"> Add to Order </button>
+			</section>
+
+			<!-- Vegetarian Pizza Section -->
+			<section class="menuItem">
+				<h2 id="vegetarian-pizza"> Vegetarian Pizza</h2>
+				<img src="assets/vegetarian.jpg" alt="Vegetarian Pizza">
+				<h2> Ingredients: </h2>
+				<p> White Sauce, Mozzarella Cheese, Feta Cheese, Spinach </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="vegetarianSize" id="vegetarianSmall" type="radio" value="small">
+					<input name="vegetarianSize" id="vegetarianMedium" type="radio" value="medium" checked>
+					<input name="vegetarianSize" id="vegetarianLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="vegetarianQuantity" id="vegetarianQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="vegetarianButton"> Add to Order </button>
+			</section>
+
+			<!-- BBQ Chicken Pizza Section -->
+			<section class="menuItem">
+				<h2 id="bbq-pizza"> BBQ Chicken Pizza</h2>
+				<img src="assets/bbq.jpg" alt="BBQ Chicken Pizza">
+				<h2> Ingredients: </h2>
+				<p> BBQ Sauce, Mozzarella Cheese, Chicken </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="bbqSize" id="bbqSmall" type="radio" value="small">
+					<input name="bbqSize" id="bbqMedium" type="radio" value="medium" checked>
+					<input name="bbqSize" id="bbqLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="bbqQuantity" id="bbqQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="bbqButton"> Add to Order </button>
+			</section>
+
+			<!-- Margherita Pizza Section -->
+			<section class="menuItem">
+				<h2 id="margherita-pizza"> Margherita Pizza</h2>
+				<img src="assets/margherita.jpg" alt="Margherita Pizza">
+				<h2> Ingredients: </h2>
+				<p> Pizza Sauce, Neopolitan Mozzarella, Basil </p>
+				<h2> Sizes: </h2>
+				<p> Small | Medium | Large </p>
+				<div class="pizzaSizes">
+					<input name="margheritaSize" id="margheritaSmall" type="radio" value="small">
+					<input name="margheritaSize" id="margheritaMedium" type="radio" value="medium" checked>
+					<input name="margheritaSize" id="margheritaLarge" type="radio" value="large">
+				</div>
+				<h2> Quantity: </h2>
+				<div class="pizzaQuantity">
+					<input name="margheritaQuantity" id="margheritaQuantity" type="number" value="1" step="1" min="1" max="5">
+				</div>
+				<button type="button" id="margheritaButton"> Add to Order </button>
+			</section>
+			
+			<!-- Pizza Comparison Table -->
+			<h1 id="pricingHeader"> Pricing Table </h1>
+			<table id="comparisonTable">
+
+				<tr> 
+					<th> Sizes </th>
+					<th> Pepperoni </th>
+					<th> Cheese </th>
+					<th> Hawaiian </th>
+					<th> Vegetarian </th>
+					<th> BBQ Chicken </th>
+					<th> Margherita </th>
+				</tr>
+
+				<tr>
+					<th> Small </th>
+					<td> $12.00 </td>
+					<td> $12.00 </td>
+					<td> $12.00 </td>
+					<td> $14.00 </td>
+					<td> $14.00 </td>
+					<td> $14.00 </td>
+				</tr>
+
+				<tr>
+					<th> Medium </th>
+					<td> $15.00 </td>
+					<td> $15.00 </td>
+					<td> $15.00 </td>
+					<td> $17.00 </td>
+					<td> $17.00 </td>
+					<td> $17.00 </td>
+				</tr>
+
+				<tr>
+					<th> Large </th>
+					<td> $18.00 </td>
+					<td> $18.00 </td>
+					<td> $18.00 </td>
+					<td> $20.00 </td>
+					<td> $20.00 </td>
+					<td> $20.00 </td>
+				</tr>
+			</table>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p>111 Pizza Rd, Kamloops, British Columbia</p>
+				</div>
+
+				<div>
+					<h2> Hours of Operation </h2>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Links </h2>
+					<a href="menu.html"> Menu </a>
+					<a href="contact.html"> Contact Us </a>
+					<a href="cart.html"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h2> Socials </h2>
+					<a href="https://www.facebook.com/" target="_blank"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank"> TikTok </a>
+				</div>
+
+				<div id="footerPageCopyright">Copyright &copy; 2026</div>
+				
+				<div id="footerPageUpdated"></div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Wiring Button Elements
+			const pepperoniButton = document.getElementById("pepperoniButton");
+			const cheeseButton = document.getElementById("cheeseButton");
+			const hawaiianButton = document.getElementById("hawaiianButton");
+			const vegetarianButton = document.getElementById("vegetarianButton");
+			const bbqButton = document.getElementById("bbqButton");
+			const margheritaButton = document.getElementById("margheritaButton");
+
+
+			// Function that adds different types of pizzas to cart
+			function addPizzaToCart(name) {
+				
+				//gets size from radio button correlated with the name
+				let sizeName = name + "Size";
+				let size = document.querySelector('input[name=' + sizeName + ']:checked').value;
+				console.log(size);
+
+				//sets key to name + size (Ex. pepperonismall)
+				let key = name + size;
+
+				//gets quantity from spinner correlated with the name
+				let selectedQuantity = document.getElementById(name + "Quantity");
+				selectedQuantity = parseInt(selectedQuantity.value);
+
+				//if selected pizza (includes type and quantity) is not already in cart, adds it to cart
+				if (localStorage.getItem(key) === null)
+				{
+					const pizza = {
+						name: name,
+						size: size,
+						quantity: selectedQuantity,
+					};
+
+					localStorage.setItem(key, JSON.stringify(pizza));
+
+				} else { 
+					//if pizza that is being added is already in the cart, increase the quantity from user input
+					let temp = JSON.parse(localStorage.getItem(key));
+
+					if (temp.size === size) {
+						temp.quantity += selectedQuantity;
+						localStorage.setItem(key, JSON.stringify(temp));
+					} 
+				} 
+
+				alert("You have added " + selectedQuantity + " " + size + " " + name + " pizza(s) to your order.");
+			}
+
+			// Event Listeners for each 'Add to Cart' button
+			pepperoniButton.addEventListener('click', () => addPizzaToCart("pepperoni"));
+			cheeseButton.addEventListener('click', () => addPizzaToCart("cheese"));
+			hawaiianButton.addEventListener('click', () => addPizzaToCart("hawaiian"));
+			vegetarianButton.addEventListener('click', () => addPizzaToCart("vegetarian"));
+			bbqButton.addEventListener('click', () => addPizzaToCart("bbq"));
+			margheritaButton.addEventListener('click', () => addPizzaToCart("margherita"));
+
+			// Console Logs for Testing
+			console.log(JSON.parse(localStorage.getItem("margheritasmall")));
+			console.log(JSON.parse(localStorage.getItem("margheritamedium")));
+			console.log(JSON.parse(localStorage.getItem("margheritalarge")));
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* Cart Page Styles */
+
+.horizontalHeaderSection {
+    padding: 5% 6% 0 3%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.horizontalHeaderSection h2 {
+    text-align: center;
+}
+
+#pizzaContentSection {
+    padding: 3% 3% 0 3%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr 1fr;
+    row-gap: 10%;
+    text-align: center;
+    align-items: center;
+}
+
+#pizzaContentSection img {
+    outline: 1px solid black;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+#pizzaContentSection h3 {
+    vertical-align: middle;
+    font-weight: lighter;
+}
+
+#noPizzaDisplay {
+    text-align: center;
+    margin: 2% auto;
+}
+
+#checkoutLink {
+    text-decoration: none;
+}
+
+#checkoutButton {
+    display: block;
+    padding: 10px;
+    margin: 10% auto 5% auto;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: bold;
+}
