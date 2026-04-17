@@ -6,6 +6,11 @@
     margin-top: 2vh;
 }
 
+#contactForm button {
+    width: fit-content;
+    padding: 1%;
+}
+
 #contactInfoSection {
     margin: 2% 0;
     text-align: center;

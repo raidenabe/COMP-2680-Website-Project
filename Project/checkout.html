@@ -2,6 +2,10 @@
 <html lang="en-CA">
 	<head>
 		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Order Kamloops Pizza Online!">
+		<meta name="keywords" content="Pizza, Online, Kamloops, Pizza Time">
+		<meta name="author" content="Raiden Abe, Kyle Obranovic, Ali Ahmed">
 
 		<title>Order Checkout</title>
 
@@ -59,7 +63,7 @@
 			</div>
 
 			<!-- No Items In Cart Message -->
-			<h3 id="noItemsInCart">Your shopping cart is empty.</h3>
+			<pre id="noItemsInCart">Your shopping cart is empty.</pre>
 
 			<!-- Subtitle -->
 			<h2 class="subtitle" id="deliveryFormHeading"> Carry-Out Details </h2>
@@ -284,27 +288,41 @@
 			const checkoutForm = document.getElementById("checkoutForm");
 			const deliveryForm = document.getElementById("deliveryForm");
 
+
 			checkoutButton.addEventListener('click', () => orderCheckout());
 
 			function orderCheckout() {
 				let deliveryFormIsValid = deliveryForm.reportValidity();
 
-				if (deliveryFormIsValid) {
-					let checkoutFormIsValid = checkoutForm.reportValidity();
-				}
+				let checkoutFormIsValid = checkoutForm.checkValidity();
 
-				if (deliveryFormIsValid && checkoutFormIsValid && !isCheckedOut)
+				if (deliveryFormIsValid)
+					checkoutFormIsValid = checkoutForm.reportValidity();
+
+				if (deliveryFormIsValid && checkoutFormIsValid && !isCheckedOut && pizzaTypesInCart !== 0)
 				{
 					isCheckedOut = true;
 
 					document.getElementById("checkoutMessage").innerHTML = "Success!"
 
+					// Creates a new date for estimated arrival time
 					let estimatedArrival = new Date();
 					estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
 
-					document.getElementById("arrivalTime").innerHTML = "<b>Estimated Arrival Time: </b>" + estimatedArrival;
+					// Formats the arrival date and time
+					let estimatedTime = estimatedArrival.toLocaleTimeString('en-CA', {timeStyle: 'short'});
+					let estimatedDate = estimatedArrival.toLocaleDateString('en-CA', {dateStyle: 'long'});
 
+					// Displays estimated arrival time
+					document.getElementById("arrivalTime").innerHTML = "<b>Estimated Pickup/Arrival Time: </b>" + estimatedDate + " at " + estimatedTime;
+
+
+					// Removes item that were checked out from cart
 					localStorage.clear();
+					
+				} else if (pizzaTypesInCart === 0)
+				{
+					alert("Please add items to your cart for checkout.");
 				}
 			}
 		</script>

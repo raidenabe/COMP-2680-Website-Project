@@ -2,6 +2,10 @@
 <html lang="en-CA">
 	<head>
 		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Order Kamloops Pizza Online!">
+		<meta name="keywords" content="Pizza, Online, Kamloops, Pizza Time">
+		<meta name="author" content="Raiden Abe, Kyle Obranovic, Ali Ahmed">
 
 		<title>Shopping Cart</title>
 
@@ -42,7 +46,7 @@
 
 			<!-- Proceed to Checkout Button -->
 			<a href="checkout.html" id="checkoutLink">
-				<button type="submit" id="checkoutButton">Proceed to Checkout</button>
+				<button type="button" id="checkoutButton">Proceed to Checkout</button>
 			</a>
         
 			<!-- Footer -->
@@ -143,7 +147,7 @@
 
 
 					const removeButton = document.createElement('button');
-					removeButton.innerText = "Remove";
+					removeButton.innerHTML = "&#x274C;";
 					removeButton.id = i;
 
 
@@ -160,7 +164,10 @@
 			if (pizzaTypesInCart === 0)
 			{
 				pizzaSection.style.display = "none";
-				document.getElementById("noPizzaDisplay").innerHTML = "<h3>Your shopping cart is empty.</h3>";
+
+				const noPizzaDisplay = document.getElementById("noPizzaDisplay");
+				noPizzaDisplay.style.display = "block";
+				noPizzaDisplay.innerHTML = "<h3>Your shopping cart is empty.</h3>";
 			} 
 
 			function removePizza(button) {
@@ -171,8 +178,7 @@
 
 				delete localStorage[key];
 
-
-				alert("Pizza removed from cart " + button.id);
+				alert("Pizza was removed from your cart. ID: " + button.id);
 
 				location.reload();
 			}

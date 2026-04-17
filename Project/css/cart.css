@@ -3,23 +3,24 @@
 /* Cart Page Styles */
 
 .horizontalHeaderSection {
-    padding: 5% 6% 0 3%;
+    padding: 3%;
+    margin-top: 2%;
+    margin-right: 1%;
+    font-size: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.horizontalHeaderSection h2 {
+    grid-template-columns: 5fr 5fr 5fr 5fr 1fr;
     text-align: center;
 }
 
 #pizzaContentSection {
-    padding: 3% 3% 0 3%;
+    padding: 0 3%;
     margin: auto;
     display: grid;
     grid-template-columns: 5fr 5fr 5fr 5fr 1fr;
     row-gap: 10%;
     text-align: center;
     align-items: center;
+    overflow: auto;
 }
 
 #pizzaContentSection img {
@@ -33,11 +34,14 @@
 #pizzaContentSection h3 {
     vertical-align: middle;
     font-weight: lighter;
+    font-size: 20px;
 }
 
 #noPizzaDisplay {
     text-align: center;
-    margin: 2% auto;
+    font-size: 16px;
+    margin: 6% auto 0 auto;
+    display: none;
 }
 
 #checkoutLink {
@@ -51,4 +55,69 @@
     width: fit-content;
     font-size: 18px;
     font-weight: bold;
+}
+
+
+/* Responsive Design */
+
+
+/* Desktop */
+
+@media screen and (max-width: 1024px) {
+
+    .horizontalHeaderSection {
+        margin-right: 3%;
+    }
+
+    .horizontalHeaderSection h2 {
+        font-size: 18px;
+    }
+
+    #pizzaContentSection h3 {
+        font-size: 18px;
+    }
+
+    #noPizzaDisplay {
+        font-size: 14px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+    .horizontalHeaderSection {
+        margin-right: 5%;
+    }
+
+    .horizontalHeaderSection h2 {
+        font-size: 14px;
+    }
+
+    #pizzaContentSection h3 {
+        font-size: 16px;
+    }
+
+    #noPizzaDisplay {
+        font-size: 12px;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 640px) {
+
+    .horizontalHeaderSection {
+        margin-right: 6%;
+    }
+
+    .horizontalHeaderSection h2 {
+        font-size: 14px;
+    }
+
+    #pizzaContentSection h3 {
+        font-size: 14px;
+    }
+
+    #noPizzaDisplay {
+        font-size: 10px;
+    }
 }

@@ -25,14 +25,15 @@ input[type="radio"] {
 
 #checkoutMessage {
     text-align: center;
+    font-weight: bold;
     color: hsla(100, 85%, 40%, 0.9);
-    margin-bottom: 3%;
+    margin: 3% auto;
 }
 
 #orderDetails {
     display:grid;
     grid-template-columns: 3fr 1fr;
-    width: 20vw;
+    width: 30vw;
     margin: 0 auto;
     text-align: left;
     line-height: 2;
@@ -41,6 +42,8 @@ input[type="radio"] {
 #noItemsInCart {
     display: none;
     margin: 4vh auto;
+    font-size: 16px;
+    font-style: italic;
     text-align: center;
 }
 
@@ -74,6 +77,14 @@ input[type="radio"] {
 }
 
 #deliveryAddress:focus:invalid {
+    background-color: hsla(0, 85%, 70%, 0.2);
+}
+
+#creditCardName:focus:valid {
+    background-color: hsla(100, 85%, 70%, 0.2);
+}
+
+#creditCardName:focus:invalid {
     background-color: hsla(0, 85%, 70%, 0.2);
 }
 
@@ -115,3 +126,31 @@ input[type="radio"] {
     margin: 2%;
 }
 
+
+/* Responsive Design */
+
+
+
+/* Desktop */
+@media screen and (max-width: 1024px) {
+
+    #orderDetails {
+        width: 35vw;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 850px) {
+
+    #orderDetails {
+        width: 40vw;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 640px) {
+
+    #orderDetails {
+        width: 45vw;
+    }
+}

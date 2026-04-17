@@ -6,6 +6,7 @@
     margin: 6% auto 0 auto;
     width: 50%;
     text-align: center;
+    line-height: 1.5;
 }
 
 .menuItem h2 {
@@ -14,8 +15,8 @@
 
 .menuItem img {
     outline: 1px solid black;
-    width: 300px;
-    height: 500px;
+    width: 20vw;
+    height: 30vw;
     object-fit: cover;
     margin: 2%;
 }
@@ -40,3 +41,51 @@
     margin: 2% auto 5% auto;
 }
 
+/* Responsive Design */
+
+
+/* Desktop */
+@media screen and (max-width: 1024px) {
+    .menuItem h2 {
+        font-size: 1.5rem;
+    }
+
+    .menuItem p {
+    font-size: 16px;
+    }
+
+    #pricingHeader {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .menuItem h2 {
+        font-size: 1.25rem;
+    }
+
+    .menuItem p {
+    font-size: 14px;
+    }
+
+    #pricingHeader {
+        font-size: 1.67rem;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 640px) {
+
+    .menuItem h2 {
+        font-size: 1rem;
+    }
+
+    .menuItem p {
+    font-size: 12px;
+    }
+
+    #pricingHeader {
+        font-size: 1.33rem;
+    }
+}
