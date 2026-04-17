@@ -33,7 +33,7 @@ input[type="radio"] {
 #orderDetails {
     display:grid;
     grid-template-columns: 3fr 1fr;
-    width: 30vw;
+    width: 25vw;
     margin: 0 auto;
     text-align: left;
     line-height: 2;
