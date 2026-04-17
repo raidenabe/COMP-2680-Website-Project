@@ -95,3 +95,16 @@ Missing Requirements from Final Project Guidelines:
   Added a gradient to the website name in the navigation bar.
   Moved all internal styles to external stylesheets corresponding to each page (There was a line in the project guidelines document that said to only use external stylesheets, so I just moved everything).
   Merged Kyle's update with my own changes.
+
+  Updated (04/17/2026) - Raiden:
+
+  Fixed checkout form logic.
+  Changed 'Remove' text on remove from cart button to show a red x instead (just to add more html entities to our project).
+  Added more <meta> tags to each page, which included viewport, keywords, description, and author.
+  Added a :last-of-type selector for the footer to change the style of the Last Updated <div>.
+  Merged some of Ali's changes with mine (did not add flexbox).
+  Added responsive design to all pages using @media screen and (max-width: __ px) in styles.css and corresponding page stylesheets (index.css, cart.css, etc.).
+  Formatted arrival time in checkout.html, so that it is easier to read.
+  Formatted all references to APA Style and added it as a .doc file.
+  Made other small design changes.
+  
