@@ -3,13 +3,14 @@
 /* Structural Styles */
 
 body {
-    background-color: #ffffff;
+    font-family: "Arial", "Helvetica";
+    background-image: url("images/pizza_background.jpg");
 }
 
 .bodyPage {
     width: 80%;
     margin: 0 auto;
-    background-color: #e7e7e7;
+    background-color: #ffffff;
 }
 
 /* Navigation Bar Styles */
@@ -17,7 +18,7 @@ body {
 .horizontalNavigation {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    background-color: #a7c6ff;
+    background-color: #72c0ff;
     align-items: center;
     text-align: center;
     padding: 10px 0;
@@ -31,7 +32,7 @@ body {
 
 .title {
     text-align: center;
-    padding-top: 2%;
+    padding-top: 3vw;
 }
 
 /* Table Styles */
@@ -66,9 +67,10 @@ table, th, td {
 
 .footer {
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1.5fr 1fr 1fr;
     align-items: start;
-    background-color: #a7c6ff;
+    background-color: #72c0ff;
 }
 
 .footer div {
@@ -111,3 +113,10 @@ table, th, td {
     display: block;
     margin: 5px 0;
 }
+
+#footerPageUpdated {
+    position: absolute;
+    right: 3vw;
+    bottom: 0.1vh;
+}
+
