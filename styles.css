@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* Structural Styles */
+
+body {
+    font-family: "Arial", "Helvetica";
+    background-image: url("images/pizza_background.jpg");
+}
+
+.bodyPage {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* Navigation Bar Styles */
+
+.horizontalNavigation {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background-color: #72c0ff;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.horizontalNavigation a {
+    color:black
+}
+
+/* Typographic Styles */
+
+.title {
+    text-align: center;
+    padding-top: 3vw;
+}
+
+/* Table Styles */
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+	text-align: center;
+}
+
+/* Form Styles */
+
+.form {
+    margin: 10px auto;
+}
+
+.form * {
+    text-align: center;
+    display: block;
+    margin: 6px auto;
+}
+
+.form > button {
+    margin-top: 1%;
+}
+
+/* Footer Styles */
+
+.footer {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
+    align-items: start;
+    background-color: #72c0ff;
+}
+
+.footer div {
+    justify-self: center;
+    padding: 20px 0;
+}
+
+.footer h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    display: block;
+    margin: 2%;
+}
+
+.footer p {
+    margin: 5px 5px;
+}
+
+.footerText {
+    outline: 1px solid black;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    margin-left: 25%;
+    padding: 10%;
+}
+
+.footerLinks {
+    display: grid;
+    align-content: start;
+    text-align: center;
+    gap: 5px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+#footerPageUpdated {
+    position: absolute;
+    right: 3vw;
+    bottom: 0.1vh;
+}
+
+
+
+
+/* ===== Responsive Design Added ===== */
+
+/* Make images responsive */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flexible container */
+.container, .row, .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Columns responsive */
+[class*="col-"] {
+    width: 100%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    [class*="col-"] {
+        width: 50%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    [class*="col-"] {
+        width: 25%;
+    }
+}
+
+/* Navigation responsive */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+/* Form responsiveness */
+input, select, textarea, button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Center content */
+body {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Shopping Cart</title>
+
+		<link href="reset.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+
+		<style>
+
+			.horizontalHeaderSection {
+				padding: 5% 3% 0 3%;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+			}
+			
+			.horizontalHeaderSection h3 {
+				text-align: center;
+			}
+
+			#pizzaContentSection {
+				padding: 3% 3% 0 3%;
+				margin: auto;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				row-gap: 10%;
+				text-align: center;
+			}
+
+			#pizzaContentSection img {
+				outline: 1px solid black;
+				margin: 0 auto;
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+			}
+
+			#pizzaContentSection h3 {
+				vertical-align: middle;
+			}
+			
+			#noPizzaDisplay {
+				text-align: center;
+				margin: 2% auto;
+			}
+
+			#checkoutLink {
+				text-decoration: none;
+			}
+
+			#checkoutButton {
+				display: block;
+				margin: 10% auto 5% auto;
+				width: fit-content;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+		</style>
+		
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<h1> Pizza Time </h1>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Your Shopping Cart </h1>
+			
+			<!-- Header Section -->
+			<section class="horizontalHeaderSection">
+				<h3> Pizza </h3>
+				<h3> Size </h3>
+				<h3> Quantity </h3>
+				<h3> Price </h3>
+			</section>
+
+			<!-- Content Section -->
+			<section id="pizzaContentSection">
+			</section>
+
+			<!-- No Pizza In Cart Display -->
+			 <div id="noPizzaDisplay"></div>
+
+			<!-- Proceed to Checkout Button -->
+			<a href="checkout.html" id="checkoutLink"><button type="text" id="checkoutButton">Proceed to Checkout</button></a>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+				</div>
+
+				<div>
+					<h3> Hours of Operation </h3>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Links </h3>
+					<a href="menu.html" alt="Menu Link"> Menu </a>
+					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
+					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Socials </h3>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+				</div>
+
+				<div id="footerPageUpdated"></div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+			let pizzaTypesInCart = 0;
+
+			// Displays Pizzas That Are In The Cart
+			const pizzaSection = document.getElementById("pizzaContentSection");
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] != null)
+				{
+					pizzaTypesInCart++;
+
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+					let pizzaImg = "<img src='Images/" + pizzaObj.name + ".jpg'>";
+					let pizzaSize = "<h3>"+ pizzaObj.size +"</h3>";
+					let pizzaQuantity = "<h3>"+ pizzaObj.quantity +"</h3>";
+					let pizzaPrice = "<h3> $15 </h3>";
+					pizzaSection.innerHTML += pizzaImg + pizzaSize + pizzaQuantity + pizzaPrice;
+					
+				}
+			}
+
+			// When the Cart is Empty
+			if (pizzaTypesInCart === 0)
+			{
+				pizzaSection.style.display = "none";
+				document.getElementById("noPizzaDisplay").innerHTML = "<h3>Your shopping cart is empty.</h3>";
+			} 
+
+		</script>
+
+	</body>
+</html>

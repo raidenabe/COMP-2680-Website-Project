@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Order Checkout</title>
+
+		<link href="reset.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+
+		<style>
+
+			#checkoutMessage {
+				text-align: center;
+				color: hsla(100, 85%, 40%, 0.9);
+			}
+
+			#orderDetails {
+				display: block;
+				width: 35vw;
+				margin: 2vh auto;
+				line-height: 2;
+				text-align: center;
+			}
+
+			#arrivalTime {
+				text-align: center;
+				margin: 2%;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<h1> Pizza Time </h1>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Title -->
+			<h1 class="title"> Checkout </h1>
+
+			<form class="form"> 
+				<label for="customerName">Full Name: *</label>
+				<input name="name" id="customerName" type="text" required/> 
+
+				<label for="customerEmail">Email: *</label>
+				<input name="email" id="customerEmail" type="email" required/> 
+
+				<label for="customerCreditCard#">Credit Card #: *</label>
+				<input name="creditcard#" id="customerCreditCard#" type="text" pattern="/^\d{4}-\d{4}-\d{4}-\d{4}$/" required/> 
+
+				<label for="customerCreditCardExp">Expiry Date: *</label>
+				<input name="creditCardExp" id="customerCreditCardExp" type="text" pattern="/^{0[0-9] | 1[0-2]}/\d{2}$/" required/> 
+
+				<label for="customerCreditCardCVV">CVV: *</label>
+				<input name="creditCardCVV" id="customerCreditCardCVV" type="text" pattern="/^\d{3}$/" required/> 
+
+				<input name="checkout" id="customerCheckout" value="Checkout" type="submit" />
+
+			</form>
+
+			<p id="checkoutMessage"></p>
+
+			<!-- Title -->
+			<h1 class="title"> Order Details </h1>
+
+			<!-- Order Details -->
+			 <main> <p id="orderDetails"></p> </main>
+
+			<p id="arrivalTime"></p>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p > Pizza Time Pizza Time Pizza Time Pizza Time</p>
+				</div>
+
+				<div>
+					<h3> Hours of Operation </h3>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Links </h3>
+					<a href="menu.html" alt="Menu Link"> Menu </a>
+					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
+					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Socials </h3>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+				</div>
+
+				<div id="footerPageUpdated"></div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+			// Array of Pizzas Based on Type and Size
+			let pizzas = [localStorage.getItem("pepperonismall"), localStorage.getItem("pepperonimedium"), localStorage.getItem("pepperonilarge"),
+						  localStorage.getItem("cheesesmall"), localStorage.getItem("cheesemedium"), localStorage.getItem("cheeselarge"),  
+						  localStorage.getItem("hawaiiansmall"), localStorage.getItem("hawaiianmedium"), localStorage.getItem("hawaiianlarge"), 
+						  localStorage.getItem("vegetariansmall"), localStorage.getItem("vegetarianmedium"), localStorage.getItem("vegetarianlarge"), 
+						  localStorage.getItem("bbqsmall"), localStorage.getItem("bbqmedium"), localStorage.getItem("bbqlarge"), 
+						  localStorage.getItem("margheritasmall"), localStorage.getItem("margheritamedium"), localStorage.getItem("margheritalarge")];
+
+			// Displays Order Information
+			let orderSummary = "";
+
+			for (let i = 0; i < pizzas.length; i++) {
+				if (pizzas[i] != null)
+				{
+					let pizzaObj = JSON.parse(pizzas[i]);
+					console.log(pizzas[i]); //Testing purposes (remove later)
+					orderSummary += pizzaObj.quantity + "x " + pizzaObj.size + " " + pizzaObj.name + " pizza <br>";
+				}
+			}
+			document.getElementById("orderDetails").innerHTML = orderSummary;
+
+			// Checkout Logic
+			const checkoutButton = document.getElementById("customerCheckout");
+
+			checkoutButton.addEventListener('click', () => orderCheckout());
+
+			function orderCheckout() {
+				document.getElementById("checkoutMessage").innerHTML = "Success!"
+
+				let estimatedArrival = new Date();
+				estimatedArrival.setMinutes(estimatedArrival.getMinutes() + 15);
+
+				document.getElementById("arrivalTime").innerHTML = "<b>Estimated Arrival Time: </b>" + estimatedArrival;
+			}
+
+			
+		</script>
+	</body>
+</html>

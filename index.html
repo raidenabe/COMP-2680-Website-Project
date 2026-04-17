@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Pizza Time</title>
+
+		<link href="reset.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+
+		<style>
+
+			.content {
+				width: 100%;
+			}
+
+			.content::after {
+				content:"";
+				display: table;
+				clear: both;
+			}
+
+			.aside {
+				float: right;
+				width: 25%;
+				padding: 5px;
+				margin-left: 25px;
+				outline: 2px solid black;
+				background-color: #72c0ff;
+				line-height: 2;
+				text-align: center;
+			}
+
+			.aside::after {
+				content:"";
+				display: table;
+				clear: both;
+				margin-top: 5%;
+			}
+
+			.aside > ol {
+				list-style-position: inside;
+				display: block;
+			}
+
+			.aside h2 {
+				padding: 10px;
+			}
+
+			.aside h4 {
+				display: inline;
+			}
+
+			.aside p {
+				margin: 2% 2% 5% 2%;
+			}
+
+			.section {
+				padding: 2% 5%;
+			}
+
+			.section p {
+				font-size: 22px;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				line-height: 1.5;
+				text-align: center;
+				margin: 3% 4% 3% 4%;
+			}
+
+			.section::after {
+				clear:both;
+				display:table;
+				content:"";
+			}
+
+			#contentImage1 {
+				float: right;
+				margin-top: 3%;
+				margin-left: 50px;
+				width: 20vw;
+				height: auto;
+				object-fit: cover;
+				outline: 2px solid black;
+			}
+
+			#contentImage2 {
+				float: left;
+				margin-right: 50px;
+				width: 25vw;
+				outline: 2px solid black;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="bodyPage">
+
+			<!-- Navigation Bar -->
+			<nav class="horizontalNavigation"> 
+				<h1> Pizza Time </h1>
+				<a href="index.html">Home</a>
+				<a href="menu.html">Menu</a>
+				<a href="cart.html">Shopping Cart</a>
+			</nav>
+
+			<!-- Content -->
+			<div class="content"> 
+
+				<!-- Title -->
+				<h1 class="title">Pizza Time</h1>
+				
+				<!-- Sidebar -->
+				<aside class="aside">
+						<h2> FAQ </h2>
+						<ol>
+							<li> <h4>Are your ingredients fresh?</h4> 
+								 <p>Yes, all of our ingredients are sourced fresh.</p>
+							</li>
+
+							<li> <h4>What days are you open?</h4> 
+								<p>We are open everyday! To find our hours of operation, 
+									visit the 'Contact Us' page.
+								</p>
+						   </li>
+
+						   <li> <h4>Are your ingredients fresh?</h4> 
+							<p>Yes, all of our ingredients are sourced fresh.</p>
+					   	   </li>
+
+							<li> <h4>Do you have vegetarian options?</h4> 
+								<p>Currently, we have one vegetarian option, but we plan on 
+									expanding our menu in the future.</p>
+						   </li>
+
+						   <li> <h4>How can we contact you?</h4> 
+							<p>For further details, visit our <a href="contact.html" alt="Contact Us Page Link">contact</a> page.</p>
+					   	   </li>
+
+
+						</ol>
+				</aside>
+
+				<!-- Section 1 -->
+				<section class="section">
+					
+
+					<img id="contentImage1" src="pizzahut.webp">
+					<p> 
+						Pizza Time is here in Kamloops to supply all your pizza needs! 
+						Eat in or out at our brand new location in Kamloops. We offer
+						a variety of different pizzas including vegetarian options.
+						For any questions you can contact us or look at our handy FAQ!
+
+					</p>
+
+					
+					
+					
+				</section>
+
+				<!-- Section 2 -->
+				<section class="section">
+
+					<video id="contentImage2" controls> 
+						<source src="pizza_video.mp4" type="video/mp4">
+					</video>
+					<p> 
+						All of our pizza is prepared by hand with the highest quality ingredients.
+						It is then cooked in our traditional wood-fired pizza oven alongside oak wood
+						to create a rich, smoky flavour.
+					</p>
+					
+					
+				</section>
+			</div>
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<div class="footerText"> 
+					<p> Pizza Time Pizza Time Pizza Time Pizza Time</p>
+				</div>
+
+				<div>
+					<h3> Hours of Operation </h3>
+					<p> Sunday: 10:00am - 1:00am </p>	
+					<p> Monday: 9:00am - 10:00pm </p>	
+					<p> Tuesday: 9:00am - 10:00pm </p>	
+					<p> Wednesday: 9:00am - 10:00pm </p>	
+					<p> Thursday: 9:00am - 10:00pm </p>	
+					<p> Friday: 9:00am - 10:00pm </p>	
+					<p> Saturday: 10:00am - 1:00am </p>	
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Links </h3>
+					<a href="menu.html" alt="Menu Link"> Menu </a>
+					<a href="contact.html" alt="Contact Us Link"> Contact Us </a>
+					<a href="cart.html" alt="Shopping Cart Link"> Shopping Cart </a>
+				</div>
+				
+				<div class="footerLinks">
+					<h3> Socials </h3>
+					<a href="https://www.facebook.com/" target="_blank" alt="Facebook Link"> Facebook </a>
+					<a href="https://www.instagram.com/" target="_blank" alt="Instagram Link"> Instagram </a>
+					<a href="https://www.tiktok.com/" target="_blank" alt="TikTok Link"> TikTok </a>
+				</div>
+
+				<div id="footerPageUpdated"></div>
+
+			</footer>
+
+		</div>
+
+		<script>
+			"use strict";
+
+			// Dynamically Updates Page Updated Element in Footer
+			let updatedDate = new Date(document.lastModified).toLocaleDateString();
+			document.getElementById("footerPageUpdated").innerHTML = "<p> Last Updated: " + updatedDate + " </p>";
+
+		</script>
+		
+	</body>
+</html>
